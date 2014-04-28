@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<title>Generate Key Pair and Export</title>
+<meta charset="utf-8">
+<script src="polycrypt/common/util.js"></script>
+<script src="polycrypt/front/polycrypt.js"></script>
+</head>
+<body>
+<h1>Test Web Cryptographic API - JavaScript Generate Key Pair &amp; Export</h1>
+<p>This application test the possible future <a href="http://www.w3.org/TR/WebCryptoAPI/" target="_blank">W3C Web Cryptography API</a> standard with the following scenario:</p>
+<ol>
+<li>The user will run the JavaScript to generate the public/private key pair (if they don't already exist).</li>
+<li>The user share his/her public key.</li>
+<li>The server, will use that public key to encrypt data specifically for the user.</li>
+<li>The user will run the JavaScript to decrypt the message with his/her private key.</li>
+</ol>
+<p>From <a href="https://dvcs.w3.org/hg/webcrypto-usecases/raw-file/tip/Overview.html" target="_blank">W3C uses cases</a>, this application demonstrate: KEYGEN-ASYM (with 2048 RSAES-PKCS1-v1_5 key pair), EXPORT (in JSON Web Key (JWK) format), DECRYPT(-ASYM). the IMPORT and encryption part (ENCRYPT-ASYM) are done in <a href="http://www.php.net/manual/en/book.openssl.php" target="_blank">php</a>.<br>
+If the browser don't support the Web Cryptography API, it will use the <a href="http://polycrypt.net/" target="_blank">PolyCrypt</a> library as the fallback.<br>
+The sample code (under MIT License) Copyright (c) 2013 <a href="https://github.com/nvdbleek/web-crypto-samples" target="_blank">Nick Van den Bleeken</a> was used as the starting point. The <a href="https://github.com/nvdbleek/web-crypto-samples/blob/master/js/lib/base64.js" target="_blank">base64.js</a> file is from him and parts of his <a href="https://github.com/nvdbleek/web-crypto-samples/blob/master/js/utils.js" target="_blank">utils.js</a> and <a href="https://github.com/nvdbleek/web-crypto-samples/blob/master/js/encrypt.js" target="_blank">encrypt.js</a> scripts are derived into my keydecrypt.js script.</p>
+<p id="logMsg"></p>
+
+<h2>1. Generate public/private keys</h2>
+<form>
+	<button id="genKey" type="button">Generate Keys</button>&nbsp;<span id="time_warn" style="color:orange;"></span>
+</form>
+
+<h2>2. Send the public key for receiving the encrypted message</h2>
+<form action="encrypt.php" method="post">
+	<textarea id="public_key" name="public_key" readonly rows="14" cols="80">Generate keys first.</textarea><br>
+	<input type="submit" name="send" value="Send Public Key" id="send_key" disabled>
+</form>
+<input type="hidden" id="decrypt">
+<script src="base64.js"></script>
+<script src="keydecrypt.js"></script>
+</body>
+</html>

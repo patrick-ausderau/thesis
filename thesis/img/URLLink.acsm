@@ -1,0 +1,35 @@
+<fulfillmentToken fulfillmentType="loan" auth="user" xmlns="http://ns.adobe.com/adept">
+  <distributor>urn:uuid:e6bf1eb0-3367-442d-8ca0-a55d16fef891</distributor>
+  <operatorURL>http://acs4.ellibs.net/fulfillment</operatorURL>
+  <transaction>1331720218359</transaction>
+  <expiration>2012-03-15T12:16:58+02:00</expiration>
+  <resourceItemInfo>
+    <resource>urn:uuid:4644e152-29dd-4229-a4c8-9627916a91c3</resource>
+    <resourceItem>1</resourceItem>
+    <metadata>
+      <dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">European Union Law</dc:title>
+      <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Alina Kaczorowska</dc:creator>
+      <dc:publisher xmlns:dc="http://purl.org/dc/elements/1.1/"></dc:publisher>
+      <dc:identifier xmlns:dc="http://purl.org/dc/elements/1.1/">ISBN:9780203886472</dc:identifier>
+      <dc:format xmlns:dc="http://purl.org/dc/elements/1.1/">application/pdf</dc:format>
+    </metadata>
+    <licenseToken>
+      <resource>urn:uuid:4644e152-29dd-4229-a4c8-9627916a91c3</resource>
+      <permissions>
+        <display>
+          <duration>86400</duration>
+        </display>
+        <excerpt>
+          <duration>86400</duration>
+        </excerpt>
+        <print>
+          <duration>86400</duration>
+        </print>
+        <play>
+          <duration>86400</duration>
+        </play>
+      </permissions>
+    </licenseToken>
+  </resourceItemInfo>
+  <hmac>413PoCLi5LlAgiSOms26ZD6Vzs8=</hmac>
+</fulfillmentToken>

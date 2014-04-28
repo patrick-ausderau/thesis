@@ -1,0 +1,45 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[hyphens]{url}
+\usepackage[top=2.5cm, bottom=3cm, left=4cm, right=2cm]{geometry}
+\usepackage{fontspec}
+
+\setlength{\parindent}{0pt}%first line of paragraph not indented
+\setlength{\parskip}{12pt}%one empty line to separate paragraph
+\setmainfont{Arial}
+
+
+\author{Patrick Ausderau}
+\title{Web Crawler}
+
+
+\begin{document}
+
+\section*{Web Crawler}
+Pant et al. \cite{inweb:crawling} define \textbf{Web Crawlers} as programs that exploit the graph structure of the Web to
+move from page to page. Crawlers are also known as spiders, robots or simply bots, and in their infancy were also named wanderers, fish or worms. In 1993, the first web crawler, the World Wide Web Wanderer\footnote{\url{http://www.mit.edu/people/mkgray/net/background.html}}, was used to compile statistics about the growth of the web \cite{naj:crawl}. They quickly became a central component of search engines to collect web pages that are to be indexed (for example the googlebot\footnote{\url{http://support.google.com/webmasters/bin/answer.py?hl=en&answer=182072}}). Crawlers are used for many other applications such as archiving the web (e.g. Heritrix\footnote{\url{https://webarchive.jira.com/wiki/display/Heritrix/Heritrix}} crawler) or specialized data mining, for example for price comparison services (e.g. the ShopWiki\footnote{\url{http://www.shopwiki.com/w/Help:Bot}} crawler) or searching for copyright violation (e.g. the Digimarc Guardian\footnote{\url{http://www.attributor.com/solutions/solutions.php?X=1.1}} or the Belgian Librius SINBAD\footnote{\url{http://www.librius.com/over-librius/wat-doet-librius/Librius-SINBAD/}} crawlers) and more (e.g. spambot (used to collect email addresses and send unsolicited messages), etc.). 
+
+The operations of web crawlers, as described by Manning et al. \cite[pp. 405-420]{man:info_ret}, are as follow:
+\vspace{-15pt}\begin{enumerate}
+\setlength{\itemsep}{0cm}%
+\setlength{\parskip}{0cm}%
+\item The crawler starts with one or more web page addresses constituting the \textit{seed set}, picks one URL\footnote{Uniform Resource Locator} from the set and download that web page.
+\item The fetched page is then parsed with two objectives:
+	\vspace{-5pt}\begin{enumerate}
+	\setlength{\itemsep}{0cm}%
+	\setlength{\parskip}{0cm}%
+	\item Extract the text, images, etc. for the data mining process, or in the case of a search engine to fed the indexer.
+	\item Extract the links to other pages, files, etc. that are added to a \textit{URL frontier}, corresponding to the resources that have yet to be fetched by the crawler. Initially, the URL frontier contains the seed set.
+	\end{enumerate}\vspace{-4pt}
+\item Once the resource has been fetched and parsed, its URL is either removed from the URL frontier or time stamped for a later visit.
+\end{enumerate}
+\vspace{-9pt}
+Manning et al. \cite[pp. 405-420]{man:info_ret} also list the features web crawler must or should provide. Ideally, a crawler must be \textbf{robust} to avoid spider trap, which are server generating web pages making the crawler downloading million of pages from the same domain and be \textbf{polite}. The politeness is both implicit, for example the crawler will wait some time before downloading a page from the same domain to avoid server overloading and bandwidth consumption and explicit by following the Robots Exclusion Protocol define in the robot.txt\footnote{\url{http://www.robotstxt.org/}} which set what resources a crawler can or not visit and fetch. Malware and spam robots are know to not follow these rules and some commercial crawler such as the Attributor (now Digimarc Guardian) do not respect the exclusion neither, even if understandably necessary, webmasters may block it more aggressively\footnote{\url{http://incredibill.blogspot.fi/2007/11/attributor-post-mortem-copyright.html}}. The features crawler should have concern efficiency, quality, freshness, scalability, extensibility, etc.\\
+
+%=================== BIBLIOGRAPHY =================
+\bibliographystyle{vancouver}
+%line space
+%\singlespacing
+\begin{flushleft}
+\bibliography{biblio}
+\end{flushleft}
+\end{document}
