@@ -1,0 +1,8 @@
+*.aux
+*.log
+*.synctex*
+*.toc
+*.bbl
+*.blg
+.project
+.DS_Store

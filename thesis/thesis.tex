@@ -1,4 +1,4 @@
-	%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
 %	THESIS
 %   Protection mechanisms for electronic books
 %
@@ -298,11 +298,11 @@ Thesis\\[2pt]
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
   The research for a new Digital Right Management (DRM) infrastructure for electronic books (e-book) is a task of the eReading work-package from the Next Media project, which goal is to to propose a protection system that could help limiting copyright infringement while allowing fair use of e-books.\newline
   
-  This text reviews the existing technologies, like DRM, Watermark and Social DRM. It studies the upcoming Lightweight Content Protection standard (for EPUB). Apart from the technical aspect, the legal, educational and financial lewis to reduce copyright infringement are studied. Web crawler and its implication into finding infringing material on the internet is addition to this work. \newline
+  This thesis reviews the existing technologies, like DRM, Watermark and Social DRM. It studies the upcoming Lightweight Content Protection standard (for EPUB). Apart from the technical aspect, the legal, educational and financial lewis to reduce copyright infringement are studied. Web crawler and its implication into finding infringing material on the internet is addition to this work. \newline
   
   The main outputs of this thesis are a deliverable (number 1.3.1.4) for the Next Media project, presentations, seminars and conferences to the Finnish National Library, Next Media project, Finnish Book Publishers Association and Finnish author unions and the participation to the redaction of the DRM recommendations for the Finnish Book Publishers Association members. \newline
 
-  As a conclusion, this work recommends not to use DRM to protect e-books but to use either a lighter protection mechanism such as Watermark and Social DRM combination or to be DRM-free. This proposal is followed by two major Finnish publishers who abandon DRM for the lighter protection.
+  This thesis recommends not to use DRM to protect e-books but to use either a lighter protection mechanism such as Watermark and Social DRM combination or to be DRM-free. This proposal is followed by two major Finnish publishers who abandon DRM for the lighter protection.
   
   \end{singlespacing}
   } \\[14cm] \hline
@@ -340,7 +340,7 @@ To view a copy of this license, visit \url{http://creativecommons.org/licenses/b
 
 I decided to publish my thesis work under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License because I strongly believe that you as reader deserve the freedom to copy, share and modify this work and if you do modify it, it is fair to give these same permissions to the others. I'm however a bit selfish and do not give you the full freedom with the Non Commercial clause, if you want to do business with my work, I would like to negotiate. 
 
-A copy in electronic form of this work can be found in github with the \LaTeX{} source. The repository contains also the sides (under the Creative Commons BY-SA license) of the presentations done during this work.
+A copy in electronic form of this work can be found in \url{https://github.com/patrick-ausderau/thesis} with the \LaTeX{} source. The repository contains also the sides (under the Creative Commons BY-SA license) of the presentations done during this work and the other documents produced for this thesis.
 
 \vspace{-20pt}\begin{center}
  \includegraphics[width=80pt]{gplv3}
@@ -349,7 +349,7 @@ The program written for this thesis, documented and listed herein is a free soft
 
 I decided to publish the source code of the application written for this thesis under a free and open source licence. I choose the GPL version 3 for multiple reasons. The first and most important one is that I want to make sure that nobody will ever use that code to build a real DRM; I can not be part of system that will restrict someone else freedom. So with the GPL3, I'm sure that if you build a DRM system with my code, anyone will have the right to publish a modified version that will break such protection mechanism. Among the other reasons, one is about the philosophy of the free and open source software, if you do improve the code, make the community benefit from it. Also by ensuring that the source code can be studied, hopefully it could help people in discovering the upcoming W3C Web Cryptography API standard.
 
-The application is running at \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and a copy of the source code is available in github. This application encrypt the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; the e-book originate from Project Gutenberg \url{http://www.gutenberg.org/ebooks/2701} where it is freely available. 
+The application is running at \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and a copy of the source code is available in \url{https://github.com/patrick-ausderau/WebCryptoAPI}. This application encrypt the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; the e-book originate from Project Gutenberg \url{http://www.gutenberg.org/ebooks/2701} where it is freely available. 
 
 \clearpage
 
@@ -368,9 +368,11 @@ To Florence Bettschart, thanks a lot for your discussion about the work of the S
 
 Thank you to Nick Van den Bleeken for the web crypto samples and PolyCrypt team. Without your work, I would not been able to test the maybe future Web Cryptographic API standard.
 
-This work was written using \LaTeX{}, served as a basis and benefit from the "Metropolia Thesis \LaTeX{} Template" (CC-BY) with the help of Panu Lepp\"{a}niemi and Patrik Luoto. Thank you two.
+This work was written using \LaTeX{}, served as a basis and benefit from the "Metropolia Thesis \LaTeX{} Template" (CC BY-SA) with the help of Panu Lepp\"{a}niemi and Patrik Luoto. Thank you two.
 
 Coding and documenting was a pleasure with the help of \url{devdocs.io}, \url{php.net}, \url{stackoverflow.com} and \url{tex.stackexchange.com} communities. Thanks to them.
+
+To my sister Nina, thank you so much for your review.
 
 
 \clearpage
@@ -445,7 +447,7 @@ The practical work tests the upcoming W3C\footnote{The World Wide Web Consortium
 
 This research focuses on the protection of \textbf{electronic book (e-book)}. Depending on the sources, the definition of e-book refers to the file as the container for the texts, images, formatting, etc. in a computer readable format, or the software needed to display the book on computer screen, or the specialized reader device. In this text, when not specified, the term e-book will refer to the file. 
 
-To be Finally mentioned, this work\footnote{The title of the task originally was \textquotedblleft New DRM infrastructure for books\textquotedblright} was mandated by the eReading work-package of the TEKES funded Next Media\footnote{\url{http://www.nextmedia.fi}} TIVI research program project. It was motivated with the postulate that the current DRM systems \textquotedblleft restrict the fair use that allows books to be read or to be borrowed by anybody\textquotedblright\footnote{This document is confidential to consortium members. No public source available. The short quotes with courtesy of my thesis instructor.}. It opened research questions such as, if the printed world could be imitated where \textquotedblleft a book can be read by anybody, but only one user at a time\textquotedblright ~ or if \textquotedblleft the need for authentication\textquotedblright ~could be minimised,  etc.
+To be Finally mentioned, this work\footnote{The title of the task originally was \textquotedblleft New DRM infrastructure for books\textquotedblright} was mandated by the eReading work-package of the TEKES funded Next Media\footnote{\url{http://www.nextmedia.fi}} TIVIT research program project. It was motivated with the postulate that the current DRM systems \textquotedblleft restrict the fair use that allows books to be read or to be borrowed by anybody\textquotedblright\footnote{This document is confidential to consortium members. No public source available. The short quotes with courtesy of my thesis instructor.}. It opened research questions such as, if the printed world could be imitated where \textquotedblleft a book can be read by anybody, but only one user at a time\textquotedblright ~ or if \textquotedblleft the need for authentication\textquotedblright ~could be minimised,  etc.
 
 
 %============== BACKGROUND ==========================
@@ -632,9 +634,9 @@ The advantage of being specific for e-book reading can also be seen as an inconv
 
 
 
-\chapter{Existing and Upcoming Technologies}\label{exist}
+\chapter{Existing and Upcoming Protection Technologies}\label{exist}
 
-\section{Existing E-book DRM}
+\section{Existing E-book DRM Systems}
 
 Nowadays, there are four major e-book DRM systems in use: Adobe, Amazon, Apple and Marlin Trust Management Organization (MTMO)\footnote{\url{http://www.marlin-community.com/technology/how_marlin_works}}. Nook DRM system is based on Adobe solution. 
 
@@ -691,68 +693,7 @@ It is not possible for a user to offer or resell his e-books. Due to the fact th
 
 About two year after the release of the Adobe Digital Editions the explication on how to circumvent the Adobe ADEPT DRM was published on the I$\heartsuit${\footnotesize CABBAGES} %\textsc{cabbages}
  blog\label{def:adobe_drm_crack} \cite{icabbages:adobe_drm_hack}. The author specifies that the Adobe file encryption was strong but the weakness was in how the Adobe Digital Editions hide the key. Nowadays, there are companies like epubor\footnote{\url{http://www.epubor.com/adobe-digital-editions-ade-drm-removal.html}} that do business by selling DRM removal tools.
-
-
-\section{Lightweight DRM}\label{def:idpf_light}
-
-The DRM systems suffer from many drawbacks such as interoperability problem where the reader is limited to a single platform, the requirement to be connected to internet in order to be authenticated, the risk to loose his content if the vendor goes bankrupt, etc. This chapter explore the possible upcoming standard for a Lightweight DRM proposed by the IDPF and its attempt in limiting the DRM problems.
-
-The Encrypted Media Extensions possible standard from the W3C was also scouted but quickly dropped because it will not be suitable for e-books. It is specifically designed for media elements\footnote{\url{http://www.w3.org/TR/encrypted-media/#extensions}}, namely video and audio files embedded or streamed into web pages.
-
-\subsection{Lightweight Content Protection (LCP)}
-
-In May 2012, IDPF made a proposal for standardizing a Lightweight Content Protection (LCP) that will be \textquotedblleft occupying a middle ground between strong DRM and DRM-free\textquotedblright ~\cite{idpf:drm-rfc} to protect EPUB e-books. The idea is to have a protection that will be strong enough to qualify as an \textquoteleft effective technical protection measure\textquoteright ~to benefit the law protection to guarantee the publisher/vendor with a full protection mechanism and at the same time to reduce the \textquoteleft hard DRM\textquoteright ~drawbacks \cite{idpf:lcp-uc}. 
-
-The LCP will work as follows: when a reader acquires an e-book, the content (texts, images, etc.) will be protected with a password encryption and the hash of the password will be associated with the file and/or the reading application. To read the e-book, the user will be prompted to enter it the first time before accessing the content. Since the password cannot be changed and will be set at purchase time, it can be defined by the vendor/publisher (to be e.g. the reader full name, email address, credit card number, etc.) \cite{idpf:lcp-uc}.
-
-With the password protection, there is no need to communicate with an authentication server, so LCP will work offline and it also means that the reader will really own the e-book (as long as he remembers the password) even if the provider ceases its activities. He will also have the freedom to have copies of his e-books on any devices he owns without limitation. The reader will be able to share his e-book; but will have to communicate the password too, so limiting him to people he trusts (friends/family) and refrain him to over-share it. Finally LCP will better respect user privacy by not spying the reader usage \cite[Why Consider LCP for EPUB? and What Is LCP? sections]{idpf:lcp-uc}. 
-
-With the content encryption, the publisher/vendor can also define limitation on usage like printing, copy of content, editing, etc. There will be also a possibility to set an expiration date which can be interesting for library lending. Basically, the provider will be able to set the same type of protection that he can do with other DRM \cite[EPUB LCP Requirements section]{idpf:lcp-uc}.
-
-By lightweight, it means for the user device, less power and memory will be required, a fast decryption process and no communication with a server \cite[What Is LCP? section]{idpf:lcp-uc}. For the provider, it will only need a simple signing/encryption mechanism, for example a web service without needing a complex server architecture \cite[What Is LCP? and Requirements sections]{idpf:lcp-rfp}. However, the cost in term of price as well as the licensing will be addressed later \cite[Requirements section]{idpf:lcp-rfp}, which makes it unclear how much it will really be. And also, there are known patents\footnote{e.g. intertrust holds over 200 patents in the digital media protection field (from: \url{http://www.intertrust.com/technologies/patents})} that exist, so a risk to have to pay royalties to third parties as an extra cost for the LCP implementation.
-
-\subsection{Advantages and Limitations of Lightweight DRM}
-
-A first argument for the IDPF is to make LCP a standard. This way, it will allow more devices and reading applications to be able to open and display the protected content, ensuring better interoperability. The reader would enjoy acquiring and reading e-books from different vendors/publishers using his favourite application/device, thus reducing the market fragmentation or lock-in \cite[Why Consider LCP for EPUB? section]{idpf:lcp-uc}. However, the same document also states that \textquotedblleft the resulting EPUB LCP [\ldots] would likely be published under licensing regimes. [\ldots] Use of the technology would be expected to be charged on a cost recovery basis.\textquotedblright ~\cite[What Is the Recommended Process For Defining LCP for EPUB? section]{idpf:lcp-uc}. So the risk is that some application/device providers will refuse to implement the LCP and/or some e-book vendors would continue to use other DRM systems and ignore LCP.
-
-IDPF envision some possible weaknesses. First, the LCP, like any DRM, will likely be cracked. But, they rely on the anti-circumvention law (see section \ref{def:law_drm}) to have some level of crack protection \cite[What Is LCP? section]{idpf:lcp-uc}; such as the illegality of a DRM removal tool. While modern DRM have some possibilities to recover and resist to crack, the LCP will not benefit from such features and because it is designed to not spy on the user, it means that it is not possible to monitor user activities such as suspicious ones \cite[What Is LCP? section]{idpf:lcp-rfp}. The others weaknesses concern the difficulties to have some business model such as \textquotedblleft Domain authentication\textquotedblright, \textquotedblleft License chaining\textquotedblright, \textquotedblleft Master-slave schemes\textquotedblright ~and \textquotedblleft Forward-and-delete\textquotedblright ~models \cite[What Is LCP? section]{idpf:lcp-rfp}. 
-
-Another concern is how the IDPF will deal with free\footnote{free as in freedom.} reading software licensed under the GNU General Public License Version 3 (GPLv3) such as Calibre\footnote{Calibre is a e-book reading application that also offers other tools such as library management, synchronization with multiple devices, e-book file conversion, etc. (from: \url{http://calibre-ebook.com/about})}. The GPLv3 section 3 of the terms and conditions state that \textquotedblleft [\ldots]you waive any legal power to forbid circumvention of technological measures[\ldots]\textquotedblright ~\cite{fsf:gplv3}, in other words, anyone with programming skills would legally have the right to modify the Calibre software to e.g. add a feature to \textquoteleft save the EPUB e-book unencrypted\textquoteright ~and the right to distribute such modified version of the application. So will IDPF forbid free application to implement the LCP and in doing so, loosing the interoperability? Or will they allow such software to implement LCP, knowing that the protection can legally be nullified?
-
-Finally, there is no clear date when the LCP will be released not even decision to stop or continue. In the use cases and requirements, it only states that \textquotedblleft IDPF solicit contributions of existing technology that could become the basis of a market-relevant solution for LCP within the next 12 calendar months or less\textquotedblright ~\cite[Why Consider LCP for EPUB? section]{idpf:lcp-uc}, meaning several month more? And also that IDPF envisions the possibility that there can be no LCP at all: \textquotedblleft [\ldots]it does not represent any commitment by the IDPF to establish a solution. [\ldots] it may become clear that no feasible standardized solution would be sufficiently useful or accepted, or that no solution is forthcoming that will sufficiently address critical requirements\textquotedblright ~\cite{idpf:drm-rfc}. 
-
-
-%Would be nice to have... 
-%\section{Existing E-book Watermark and Social DRM}
-
-%TODO...\\
-%- http://www.booxtream.com \\
-%- http://genlore.com \\
-%- http://www.enthrill.com/pubtech \\
-%- webcrawler (e.g. SINBAD) \\
-%- advantages and limitations \\
-%-- price
-%-- privacy
-%-- easy hack
-
-%\section{Copyright Licenses}
-
-%TODO...\\
-%- Creative Commons (http://creativecommons.org)\\
-%- Copyheart (http://copyheart.org/)\\
-%- Copyfarleft (http://p2pfoundation.net/Copyfarleft)\\
-%- Free art (http://artlibre.org/licence/lal/en)
-
-%Not enough time... plan B.
-%\chapter{Methods and Materials}
-%TODO...\\
-%layer approach\\
-%cryptography\\
-%scrambling (prevent break once, break everywhere)\\
-%hide (or renew) key\\
-%cloud - stream\\
-%off-line storage
-
+ 
 %\section{Technical Implementation of Lightweight DRM}
 
 %TODO:\\
@@ -775,7 +716,7 @@ Finally, there is no clear date when the LCP will be released not even decision 
 %- w3c protection (almost no hope?)\\
 %- ...
 
-\chapter{Technical Implementation of the DRM Encryption Pillar Using W3C Standard}
+\section{DRM Encryption Pillar Using W3C Standard}
 
 This work research if a DRM system could be made to protect an e-book while at the same time reduce the restriction to the fair use. Currently, one drawback of the DRM system is the lack of interoperability, like the impossibility to read an e-book on different platform. This chapter will test if the possibly upcoming W3C Web Cryptography API\footnote{\url{http://www.w3.org/TR/WebCryptoAPI}} standard could be used for the protection and encryption part of such DRM system.
 
@@ -788,7 +729,7 @@ the PolyCrypt\footnote{\url{http://polycrypt.net/}} implementation is used as a 
 
 The starting point for the code is the web-crypto-samples application\footnote{\url{https://github.com/nvdbleek/web-crypto-samples}}, Copyright (c) 2013 Nick Van den Bleeken under MIT License. The file \url{base64.js} is an exact copy from this application, used as a library. Part of his \url{utils.js} and \url{encrypt.js} scripts are derived into the \url{keydecrypt.js} code as seen in annex \ref{source:code}.
 
-\section{Coding}
+\subsection{Technical Implementation Using Web Cryptography API}
 
 As a first step, this application, generate the public and private key pair on the client side if they do not exist. This operation correspond to the KEYGEN-ASYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. The listing \ref{js:genkey} shows the JavaScript code used to generate the 2048 bits keys (lines 1 to 7) with the Public-Key Cryptography Standards (PKCS) RSA algorithm and the callback method if the keys get generated successfully (lines 9 to 17). After creation, the keys are stored on the user computer (lines 13 and 14) for later cryptographic operations.
 
@@ -914,10 +855,10 @@ Part of the source code is listed into the annex \ref{source:code}.
  The \url{genkey_and_export.html} and \url{keydecrypt.js} representing the client side of the application responsible for the local operation of generating the keys, exporting the public key, decrypting the content with the private key and rendering the result to the user. The \url{encrypt.php} file represent the server side of the application responsible for importing the user public key and encrypting the content. The source code files that are not listed in annex \ref{source:code} are the non-modified files used as library, namely the PolyCrpt\footnote{\url{https://github.com/polycrypt/polycrypt/tree/master/src}}, Copyright (C) Raytheon BBN Technologies Corp, 2013, published under BSD 3-clause license\footnote{\url{https://github.com/polycrypt/polycrypt/blob/master/license.txt}} and the \url{base64.js}\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/js/lib/base64.js}} file , Copyright (c) 2013 Nick Van den Bleeken under MIT License\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/LICENSE}}.
  
 A demonstration of this application is running at
-  \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and the source code is available at the same place or in github. This software is licensed under the  GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This application encrypt the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; the e-book originate from Project Gutenberg\footnote{\url{http://www.gutenberg.org/ebooks/2701}} where it is freely available.
+  \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and the source code is available at the same place or in github\footnote{\url{https://github.com/patrick-ausderau/WebCryptoAPI}}. This software is licensed under the  GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This application encrypt the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; the e-book originate from Project Gutenberg\footnote{\url{http://www.gutenberg.org/ebooks/2701}} where it is freely available.
 
 
-\section{Known Problems and Possible Improvements}
+\subsection{Known Problems and Possible Improvements}
 
 With this application, the protection is only guaranteed during the transport between the server and the client machine. Once on the client machine, it is very hard to hide the private key and obfuscate the JavaScript decryption code. If the user retrieve the private key, he could write an alternative decryption application that could for example save unencrypted copy of the files that he could later share. With the JavaScript being an interpreted language, the reverse engineering process to modify the decryption code would be easier than with compiled language.
 
@@ -928,6 +869,68 @@ Another concern with JavaScript as stated by Matasano Security \cite{matasano:js
 This application use the asymmetric decryption operation intensively and this operation is rather slow with the current implementation of the Web Cryptography API. A possible improvement would be to only encrypt part of the file, for example the first and last three paragraphs of each chapter, that would be enough to make the content unusable. Another option would be to use the asymmetric keys only to exchange symmetric session keys, as proposed by the use case \textquotedblleft Authenticated Video Services\textquotedblright~\cite{w3c:uc_webcrypto}, with the symmetric decryption being much faster.
 
 Some possible improvements for this application would be to use the off-line storage provided by the HTML5 language, so the full encrypted content could be stored on the user computer to be read without internet connection and also making possible to do the decryption of the next chapter in the background so the user will not have to wait. The content, once decrypted could be better presented to the user, for example by using the \url{epub.js}\footnote{\url{https://github.com/futurepress/epub.js}} script. One know bug of this application is with the encryption and decryption of some special typographical characters such as the curly quotation marks or the em dash.
+
+
+
+\section{Lightweight DRM}\label{def:idpf_light}
+
+The DRM systems suffer from many drawbacks such as interoperability problem where the reader is limited to a single platform, the requirement to be connected to internet in order to be authenticated, the risk to loose his content if the vendor goes bankrupt, etc. This chapter explore the possible upcoming standard for a Lightweight DRM proposed by the IDPF and its attempt in limiting the DRM problems.
+
+The Encrypted Media Extensions possible standard from the W3C was also scouted but quickly dropped because it will not be suitable for e-books. It is specifically designed for media elements\footnote{\url{http://www.w3.org/TR/encrypted-media/#extensions}}, namely video and audio files embedded or streamed into web pages.
+
+\subsection{Lightweight Content Protection (LCP)}
+
+In May 2012, IDPF made a proposal for standardizing a Lightweight Content Protection (LCP) that will be \textquotedblleft occupying a middle ground between strong DRM and DRM-free\textquotedblright ~\cite{idpf:drm-rfc} to protect EPUB e-books. The idea is to have a protection that will be strong enough to qualify as an \textquoteleft effective technical protection measure\textquoteright ~to benefit the law protection to guarantee the publisher/vendor with a full protection mechanism and at the same time to reduce the \textquoteleft hard DRM\textquoteright ~drawbacks \cite{idpf:lcp-uc}. 
+
+The LCP will work as follows: when a reader acquires an e-book, the content (texts, images, etc.) will be protected with a password encryption and the hash of the password will be associated with the file and/or the reading application. To read the e-book, the user will be prompted to enter it the first time before accessing the content. Since the password cannot be changed and will be set at purchase time, it can be defined by the vendor/publisher (to be e.g. the reader full name, email address, credit card number, etc.) \cite{idpf:lcp-uc}.
+
+With the password protection, there is no need to communicate with an authentication server, so LCP will work offline and it also means that the reader will really own the e-book (as long as he remembers the password) even if the provider ceases its activities. He will also have the freedom to have copies of his e-books on any devices he owns without limitation. The reader will be able to share his e-book; but will have to communicate the password too, so limiting him to people he trusts (friends/family) and refrain him to over-share it. Finally LCP will better respect user privacy by not spying the reader usage \cite[Why Consider LCP for EPUB? and What Is LCP? sections]{idpf:lcp-uc}. 
+
+With the content encryption, the publisher/vendor can also define limitation on usage like printing, copy of content, editing, etc. There will be also a possibility to set an expiration date which can be interesting for library lending. Basically, the provider will be able to set the same type of protection that he can do with other DRM \cite[EPUB LCP Requirements section]{idpf:lcp-uc}.
+
+By lightweight, it means for the user device, less power and memory will be required, a fast decryption process and no communication with a server \cite[What Is LCP? section]{idpf:lcp-uc}. For the provider, it will only need a simple signing/encryption mechanism, for example a web service without needing a complex server architecture \cite[What Is LCP? and Requirements sections]{idpf:lcp-rfp}. However, the cost in term of price as well as the licensing will be addressed later \cite[Requirements section]{idpf:lcp-rfp}, which makes it unclear how much it will really be. And also, there are known patents\footnote{e.g. intertrust holds over 200 patents in the digital media protection field (from: \url{http://www.intertrust.com/technologies/patents})} that exist, so a risk to have to pay royalties to third parties as an extra cost for the LCP implementation.
+
+\subsection{Advantages and Limitations of Lightweight DRM}
+
+A first argument for the IDPF is to make LCP a standard. This way, it will allow more devices and reading applications to be able to open and display the protected content, ensuring better interoperability. The reader would enjoy acquiring and reading e-books from different vendors/publishers using his favourite application/device, thus reducing the market fragmentation or lock-in \cite[Why Consider LCP for EPUB? section]{idpf:lcp-uc}. However, the same document also states that \textquotedblleft the resulting EPUB LCP [\ldots] would likely be published under licensing regimes. [\ldots] Use of the technology would be expected to be charged on a cost recovery basis.\textquotedblright ~\cite[What Is the Recommended Process For Defining LCP for EPUB? section]{idpf:lcp-uc}. So the risk is that some application/device providers will refuse to implement the LCP and/or some e-book vendors would continue to use other DRM systems and ignore LCP.
+
+IDPF envision some possible weaknesses. First, the LCP, like any DRM, will likely be cracked. But, they rely on the anti-circumvention law (see section \ref{def:law_drm}) to have some level of crack protection \cite[What Is LCP? section]{idpf:lcp-uc}; such as the illegality of a DRM removal tool. While modern DRM have some possibilities to recover and resist to crack, the LCP will not benefit from such features and because it is designed to not spy on the user, it means that it is not possible to monitor user activities such as suspicious ones \cite[What Is LCP? section]{idpf:lcp-rfp}. The others weaknesses concern the difficulties to have some business model such as \textquotedblleft Domain authentication\textquotedblright, \textquotedblleft License chaining\textquotedblright, \textquotedblleft Master-slave schemes\textquotedblright ~and \textquotedblleft Forward-and-delete\textquotedblright ~models \cite[What Is LCP? section]{idpf:lcp-rfp}. 
+
+Another concern is how the IDPF will deal with free\footnote{free as in freedom.} reading software licensed under the GNU General Public License Version 3 (GPLv3) such as Calibre\footnote{Calibre is a e-book reading application that also offers other tools such as library management, synchronization with multiple devices, e-book file conversion, etc. (from: \url{http://calibre-ebook.com/about})}. The GPLv3 section 3 of the terms and conditions state that \textquotedblleft [\ldots]you waive any legal power to forbid circumvention of technological measures[\ldots]\textquotedblright ~\cite{fsf:gplv3}, in other words, anyone with programming skills would legally have the right to modify the Calibre software to e.g. add a feature to \textquoteleft save the EPUB e-book unencrypted\textquoteright ~and the right to distribute such modified version of the application. So will IDPF forbid free application to implement the LCP and in doing so, loosing the interoperability? Or will they allow such software to implement LCP, knowing that the protection can legally be nullified?
+
+Finally, there is no clear date when the LCP will be released not even decision to stop or continue. In the use cases and requirements, it only states that \textquotedblleft IDPF solicit contributions of existing technology that could become the basis of a market-relevant solution for LCP within the next 12 calendar months or less\textquotedblright ~\cite[Why Consider LCP for EPUB? section]{idpf:lcp-uc}, meaning several month more? And also that IDPF envisions the possibility that there can be no LCP at all: \textquotedblleft [\ldots]it does not represent any commitment by the IDPF to establish a solution. [\ldots] it may become clear that no feasible standardized solution would be sufficiently useful or accepted, or that no solution is forthcoming that will sufficiently address critical requirements\textquotedblright ~\cite{idpf:drm-rfc}. 
+
+
+%Would be nice to have... 
+%\section{Existing E-book Watermark and Social DRM}
+
+%TODO...\\
+%- http://www.booxtream.com \\
+%- http://genlore.com \\
+%- http://www.enthrill.com/pubtech \\
+%- webcrawler (e.g. SINBAD) \\
+%- advantages and limitations \\
+%-- price
+%-- privacy
+%-- easy hack
+
+%\section{Copyright Licenses}
+
+%TODO...\\
+%- Creative Commons (http://creativecommons.org)\\
+%- Copyheart (http://copyheart.org/)\\
+%- Copyfarleft (http://p2pfoundation.net/Copyfarleft)\\
+%- Free art (http://artlibre.org/licence/lal/en)
+
+%Not enough time... plan B.
+%\chapter{Methods and Materials}
+%TODO...\\
+%layer approach\\
+%cryptography\\
+%scrambling (prevent break once, break everywhere)\\
+%hide (or renew) key\\
+%cloud - stream\\
+%off-line storage
 
 
 \chapter{DRM-Free}\label{free}
@@ -994,20 +997,20 @@ Stallman \cite{gnu:freedom_or_copyright} concludes by advising that before this 
 \chapter{Results}
 
 The main products of this thesis are the participation for the Next Media project in different forms. One is the deliverable (number 1.3.1.4) with the title \textquotedblleft Protection mechanisms for
-electronic books\textquotedblright . It is composed of almost the same text and content as the chapters \ref{intro}, \ref{protec}, \ref{exist}, \ref{free} and \ref{conc} as of this work. It was returned to the consortium in February 2013.
+electronic books\textquotedblright . It is composed of almost the same text and content as the chapters \ref{intro}, \ref{protec}, \ref{exist}, \ref{free} and \ref{conc} as of this work. It was returned to the consortium in February 2013. A copy of this document can be found in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
 
 Another participation to the Next Media project consisted of a presentation to the Finnish National library and the company Ellibs representatives in April 2012. The presentation and discussion concentrated on the topics of how could Finnish libraries lend e-books as they do with paper books and also about the archiving e-books. An other presentation for the Finnish Book Publishers Association development group in October 2012 concentrated in presenting the different alternatives for protecting e-books.
 
-For the eReading work-package of the Next Media project, there are two presentations in seminars, one in June 2012 and the next one in December 2012. Another seminar participation is the Next Media Result Seminar in February 2013, with a short, fifteen minutes presentation. The slide show of this presentation is available in the Next Media website\footnote{\url{http://www.nextmedia.fi/779350088/en/read/Next_Media_Result_Seminar_6.2.2013}} and the video recording available on the Vimeo platform\footnote{\url{http://vimeo.com/59498270}}. A last presentation is a 45 minutes conference for the Finnish Book Publishers Association and two authors unions members in February 2012. The slide show of all the presentation are published in github\footnote{\url{...}}.
+For the eReading work-package of the Next Media project, there are two presentations in seminars, one in June 2012 and the next one in December 2012. Another seminar participation is the Next Media Result Seminar in February 2013, with a short, fifteen minutes presentation. The slide show of this presentation is available in the Next Media website\footnote{\url{http://www.nextmedia.fi/779350088/en/read/Next_Media_Result_Seminar_6.2.2013}} and the video recording available on the Vimeo platform\footnote{\url{http://vimeo.com/59498270}}. A last presentation is a 45 minutes conference for the Finnish Book Publishers Association and two authors unions members in February 2012. The slide show of all the presentation are published in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
 
-The last task for the Next Media project is the participation to the reflection group about e-book protection initiated by the Finnish Book Publishers Association. The outcome is the DRM recommendation send to the Finnish publishers in June 2013. The main result being majors Finnish publishers who abandon DRM in favour of the watermark and Social DRM lighter protection system \footnote{\url{https://www.sttinfo.fi/release?releaseId=8700912}}.
+The last task for the Next Media project is the participation to the reflection group about e-book protection initiated by the Finnish Book Publishers Association. The outcome is the DRM recommendation send to the Finnish publishers in June 2013. The main result being majors Finnish publishers who abandon DRM in favour of the watermark and Social DRM lighter protection system \footnote{\url{https://www.sttinfo.fi/release?releaseId=8700912}}. The Web crawler text is accompanying the DRM recommendation. It is presented in the annex \ref{app:crawl} or as a stand alone text in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}
 
 The application produced for this thesis demonstrates that the upcoming W3C Web Cryptography API can be used to encrypt data. It also shows some of the limitation of DRM systems such as the difficulty to hide private key. It also outline the risks in using the current implementation of the Web Cryptography API for serious cryptographic operations.
 
 
 \chapter{Discussion}\label{discuss}
 
-During this research work, I studied the existing and upcoming protection techniques, namely: Digital Right Management (DRM), Watermark, Social DRM and Lightweight Content Protection (LCP) and tried to implement a protection system with the Web Cryptography API. What I found is that it does not exist possible improvement of the DRM techniques because of the paradigm problem of trying to impose the physical world to the electronic world which are fundamentally different.
+During this research work, I studied the existing and upcoming protection techniques on e-book, namely: Digital Right Management (DRM), Watermark, Social DRM and Lightweight Content Protection (LCP) and tried to implement a protection system with the Web Cryptography API. What I found is that it does not exist possible improvement of the DRM techniques because of the paradigm problem of trying to impose the physical world to the electronic world which are fundamentally different.
 
 However, a technical solution that could guarantee a fair revenue to the author of a e-book while not restricting the user freedom to share copy of it, could be to implement a script that would present to the reader a donate button. With such button, if the reader likes the e-book, he could very easily offers to the author a small sum of money as a reward for his work. A similar system already exist on the internet with for example Flattr\footnote{\url{https://flattr.com/}}.
 
