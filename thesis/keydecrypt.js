@@ -4,7 +4,7 @@
  * https://github.com/nvdbleek/web-crypto-samples
  */
 
-/*******************************************************************************
+/***********************************************************
  * Web Cryptography API EBook
  * Copyright (c) 2014 Patrick Ausderau
  *
@@ -20,7 +20,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *******************************************************************************/
+ **********************************************************/
 var metropolia = metropolia || {};
 metropolia.keydecrypt = (function() {
 	var keydecrypt = {
