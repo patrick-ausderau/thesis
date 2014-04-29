@@ -447,7 +447,7 @@ The practical work tests the upcoming W3C\footnote{The World Wide Web Consortium
 
 This research focuses on the protection of \textbf{electronic book (e-book)}. Depending on the sources, the definition of e-book refers to the file as the container for the texts, images, formatting, etc. in a computer readable format, or the software needed to display the book on computer screen, or the specialized reader device. In this text, when not specified, the term e-book will refer to the file. 
 
-To be Finally mentioned, this work\footnote{The title of the task originally was \textquotedblleft New DRM infrastructure for books\textquotedblright} was mandated by the eReading work-package of the TEKES funded Next Media\footnote{\url{http://www.nextmedia.fi}} TIVIT research program project. It was motivated with the postulate that the current DRM systems \textquotedblleft restrict the fair use that allows books to be read or to be borrowed by anybody\textquotedblright\footnote{This document is confidential to consortium members. No public source available. The short quotes with courtesy of my thesis instructor.}. It opened research questions such as, if the printed world could be imitated where \textquotedblleft a book can be read by anybody, but only one user at a time\textquotedblright ~ or if \textquotedblleft the need for authentication\textquotedblright ~could be minimised,  etc.
+To be finally mentioned, this work\footnote{The title of the task originally was \textquotedblleft New DRM infrastructure for books\textquotedblright} was mandated by the eReading work-package of the TEKES funded Next Media\footnote{\url{http://www.nextmedia.fi}} TIVIT research program project. It was motivated with the postulate that the current DRM systems \textquotedblleft restrict the fair use that allows books to be read or to be borrowed by anybody\textquotedblright\footnote{This document is confidential to consortium members. No public source available. The short quotes with courtesy of my thesis instructor.}. It opened research questions such as, if the printed world could be imitated where \textquotedblleft a book can be read by anybody, but only one user at a time\textquotedblright ~ or if \textquotedblleft the need for authentication\textquotedblright ~could be minimised,  etc.
 
 
 %============== BACKGROUND ==========================
@@ -486,7 +486,7 @@ Daniels \cite{dan:hard-soft-drm-1} use the term \textquotedblleft \textbf{hard D
 
 \section{Social DRM, Watermark and Fingerprint}
 
-\textbf{Watermarking} and \textbf{fingerprinting} \label{def:watermark} are technologies used to identify a file. They originate from the information hiding techniques as presented in figure \ref{fig:def:drm_water_class}. Petitcolas et al. \cite{ieee:info_hiding} classify them as robust copyright marking if it is infeasible to remove them or if removing them will destroy the file at the same time. Otherwise, they classify them as fragile if the copyright marking is destroyed when the file is modified. 
+\textbf{Watermarking} and \textbf{fingerprinting} \label{def:watermark} are technologies used to identify a file. They originate from the information hiding techniques as presented in figure \ref{fig:def:drm_water_class}. Petitcolas et al. \cite{ieee:info_hiding} classify them as robust copyright marking if it is infeasible to remove them or if removing them will destroy the file at the same time. Otherwise, they classify them as fragile if the copyright marking is destroyed when the file is modified. While interesting, the other information hiding techniques as presented in figure \ref{fig:def:drm_water_class}, such as steganography that hides a message in another message will not be presented.
 
 \begin{figure}[h]
    \centering
@@ -718,7 +718,7 @@ About two year after the release of the Adobe Digital Editions the explication o
 
 \section{DRM Encryption Pillar Using W3C Standard}
 
-This work research if a DRM system could be made to protect an e-book while at the same time reduce the restriction to the fair use. Currently, one drawback of the DRM system is the lack of interoperability, like the impossibility to read an e-book on different platform. This chapter will test if the possibly upcoming W3C Web Cryptography API\footnote{\url{http://www.w3.org/TR/WebCryptoAPI}} standard could be used for the protection and encryption part of such DRM system.
+This work research if a DRM system can be made to technically protect an e-book while at the same time reduce the restriction to the fair use. Currently, one drawback of the DRM system is the lack of interoperability, like the impossibility to read an e-book on different platform. Thus, it become interesting to test if the upcoming W3C Web Cryptography API\footnote{\url{http://www.w3.org/TR/WebCryptoAPI}} standard could be used for the protection and encryption part of such DRM system.
 
 The assumption is that most of the modern devices do or can have a JavaScript capable web browser and can be connected to internet directly or through another device. If asserted, then making a web based DRM system where the user could use his favourite browser on any device to read protected content could offer a better interoperability than most of the existing DRM systems.
 
@@ -858,7 +858,7 @@ A demonstration of this application is running at
   \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and the source code is available at the same place or in github\footnote{\url{https://github.com/patrick-ausderau/WebCryptoAPI}}. This software is licensed under the  GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This application encrypt the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; the e-book originate from Project Gutenberg\footnote{\url{http://www.gutenberg.org/ebooks/2701}} where it is freely available.
 
 
-\subsection{Known Problems and Possible Improvements}
+\subsection{Problems and Improvements for the Technical Implementation}
 
 With this application, the protection is only guaranteed during the transport between the server and the client machine. Once on the client machine, it is very hard to hide the private key and obfuscate the JavaScript decryption code. If the user retrieve the private key, he could write an alternative decryption application that could for example save unencrypted copy of the files that he could later share. With the JavaScript being an interpreted language, the reverse engineering process to modify the decryption code would be easier than with compiled language.
 
@@ -933,8 +933,8 @@ Finally, there is no clear date when the LCP will be released not even decision 
 %off-line storage
 
 
-\chapter{DRM-Free}\label{free}
-\section{DRM Opponents and Limitations}\label{def:opp}
+\chapter{DRM-Free Approaches}\label{free}
+\section{Opponents to DRM and Limitations of Technical Protections}\label{def:opp} 
 
 The opponent to the DRM, such as the Free Software Foundation (FSF) through their \textquoteleft defective by design\textquoteright ~\cite{fsf:defectivebydesign} campaign define DRM as \textquotedblleft Digital Restriction Management\textquotedblright because DRM restrict the fair use like limitation of the private copies and backup, hard or impossible to share, swap, offer or resell purchased files. It also \textquotedblleft imprisons\textquotedblright the user in non-free\footnote{Free here has the meaning freedom/liberty in opposition to proprietary (so nothing related to the price/cost).} reading software where the user is forced to agree with policy that may downgrade his rights with new software upgrade otherwise he looses his files. They raise privacy concerns since such software can monitor user hard disk and spy computer usage. They also denounce a back-door that allow vendor to remotely delete the e-books form the devices of the users; with the example of Amazon removing the George Orwell 1984 e-book from hundreds of users\footnote{\url{http://www.defectivebydesign.org/blog/1248}} or more recently clearing the full collection from one reader\footnote{\url{http://www.defectivebydesign.org/node/2250}}. 
 
@@ -971,13 +971,13 @@ With DRM, Watermark and Social DRM, the reader must provide private information 
 %http://www.edri.org/docs/edri_copyright_consultation.pdf
 %http://ec.europa.eu/internal_market/copyright/studies/studies_en.htm
 
-\section{DRM Alternative}
+\section{Alternative to the Technical Protections}
 
 The file sharing on internet (authorized or not) is a reality and the DRM does not stop nor prevent it. So, an alternative to the technical measure is to have no DRM. Among the advocates of such approach, let mention Stallman \cite{gnu:freedom_or_copyright} with his essay Freedom\textemdash or Copyright? and Aigrain \cite{aigrain:sharing} with his book Sharing. Both also promote the legalization of non-market file sharing. The non-market file sharing is done between users without commercial counterpart and without using a commercial third party service.
 
 Stallman \cite{gnu:freedom_or_copyright} and Aigrain \cite[section 3.2]{aigrain:sharing} say that non-market sharing is useful for culture by providing a better access to it, making it more divers and also by making available out of print and orphan works. It can also help in promoting unknown authors, when publishers put focus on possible best-selling tittle (from which they hope to get more revenues), the readers will more likely share works that they enjoyed or think that are of interest. 
 
-They also say that the authors can still get fair revenues by selling DRM-free e-books giving example of Stephen King \cite{gnu:freedom_or_copyright} and even e-books release under the Creative Commons licenses in synergy with paper books such as Cory Doctorow or John Sundman \cite[section 7.4]{aigrain:sharing}. In scientific/technical publishing, this is already a reality with publishers like Springer who provide e-books with no DRM to guarantee \textquotedblleft Perpetual access \& ownership\textquotedblright ~\cite{springer:ebooks} or O'Reilly who adds services to attract customers such as \textquotedblleft lifetime access\textquotedblright , provide the files in multiple formats so the user can read them in any device and \textquotedblleft free updates to reflect published changes and corrections\textquotedblright ~\cite{oreilly:ebook}. 
+They also say that the authors can still get fair revenues by selling DRM-free e-books giving example of Stephen King \cite{gnu:freedom_or_copyright} and even e-books released under the Creative Commons licenses in synergy with paper books such as Cory Doctorow or John Sundman \cite[section 7.4]{aigrain:sharing}. In scientific/technical publishing, this is already a reality with publishers like Springer who provide e-books with no DRM to guarantee \textquotedblleft Perpetual access \& ownership\textquotedblright ~\cite{springer:ebooks} or O'Reilly who adds services to attract customers such as \textquotedblleft lifetime access\textquotedblright , provide the files in multiple formats so the user can read them in any device and \textquotedblleft free updates to reflect published changes and corrections\textquotedblright ~\cite{oreilly:ebook}. 
 
 In fiction and others genre, some vendors, for example, Weightless Books\footnote{\url{http://weightlessbooks.com/about/}} sell all their e-books DRM-free. In publishing the Tor/Forge announced that they will release their full catalogue without DRM by July 2012 \cite{tor:drm-free} and that discussion went with their parent company Macmillan \cite{antipope:more_drm}. One of the older DRM-free publisher is Baen Books\footnote{\url{http://www.baenebooks.com/t-DRM.aspx}} who was in 2007 stating:
 \begin{quote}
@@ -1024,12 +1024,11 @@ This research work was limited to the copyright protection on electronic book. H
 
 \chapter{Conclusions}\label{conc}
 
-
-The research conducted shows that among the technical options to protect e-book from illegal uses, none is perfect. Trying to impose the rules of the physical world to the electronic one is not suitable. 
+The copyright for e-book such as the moral and material interests of the author is legitimate. But the research conducted shows that among the technical options to protect e-book from illegal uses, none is perfect. Trying to impose the rules of the physical world to the electronic one is not suitable. 
 
 For the e-book, the \textquoteleft hard DRM\textquoteright ~is not an appropriate solution as it does not prevent nor stop the illegal file sharing, it restricts the freedom of legitimate reader (while cracker get it fully), adds extra costs in term of price and infrastructure for the publisher/vendor and tends to fragment the market (or creates monopoly). However, in some cases, such as company confidential documents, where the reader and provider agree on the need for protection, the DRM may be a good solution. 
 
-Concerning the Lightweight Content Protection (LCP), it remains interesting on following the IDPF work. Even if the LCP still has unclear costs, it could be an alternative to \textquoteleft hard DRM\textquoteright ~for vendor or library when the publisher imposes technical protection. If it would be implemented, it could also reduce some of the drawbacks with better interoperability, no spying and a real ownership for the reader. But, as with the \textquoteleft hard DRM\textquoteleft , it could be cracked. 
+Concerning the Lightweight Content Protection (LCP), it remains interesting on following the IDPF work. Even if the LCP still has unclear costs, it could be an alternative to \textquoteleft hard DRM\textquoteright ~for vendor or library when the publisher imposes technical protection. If it would be implemented, it could also reduce some of the drawbacks with better interoperability, no spying and a real ownership for the reader. But, as with the \textquoteleft hard DRM\textquoteleft , it could be cracked to remove the restrictions. 
 
 The Social DRM and watermark combination might be the less problematic technical solution. It can be better accepted by the users, offers some level of protection and help deter on copyright infringement. However, it may be rejected because of privacy concern.
 
@@ -1064,6 +1063,9 @@ For these reasons, being DRM-free would be the better option. It might show that
 \settocdepth{chapter}
 %add Appendices in the table of content
 \addappheadtotoc
+%force smaller vertical spacing in table of content
+\addtocontents{toc}{\vspace{2pt}}
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\vspace{-12pt}}}{}{}
 %have Appendix 1 (instead of Appendix A)
 \renewcommand{\thechapter}{\arabic{chapter}} 
 
@@ -1304,6 +1306,8 @@ Stories: shares his annotations - accesses and uses others annotations \\
 %overwrite the header
 \makeevenhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage3}\total{appage3})}
 \makeoddhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage3}\total{appage3})}
+%seems that the previous appendix makes the toc mad (like keeping some space for the section (that do not show in toc)?)
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\vspace{-11pt}}}{}{}
 
 \chapter{Source Code}\label{source:code}
 
@@ -1318,6 +1322,8 @@ The \url{keydecrypt.js} JavaScript file in listing \ref{source:js} is responsibl
 The \url{encrypt.php} PHP file in listing \ref{source:php} handles the server side operations. It imports the user public key and uses it to encrypt a EPUB file content that is sent back to the user for decryption and rendering.
 
 \lstinputlisting[language=PHP,caption={Imports public key, encrypts content - PHP file},label=source:php]{encrypt.php}
+
+A copy of the source code is available in \url{https://github.com/patrick-ausderau/WebCryptoAPI}.
 
 %============== SEMINAR ==========================
 %\clearpage
