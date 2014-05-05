@@ -471,18 +471,18 @@ At large, as shown in figure \ref{fig:def:drm_pillar}, the DRM groups many techn
 \item \textbf{Conditional access}: Define and enforce the license in such cases as if the user can copy the text, print it, limit the number of device that can access it, set the access duration (e.g. for library lending) or if the copy can be shared and how many times, etc.
 \end{itemize}
 
-\begin{figure}[h]
+A typical DRM content protection process is presented in figure \ref{fig:def:drm_scheme}. On the provider side, once the user purchases content, a key is associated to the user identity. The key will be used to sign the file to make the copy unique and protect the content with encryption (figure \ref{fig:def:drm_scheme}: \textit{Scrambling and Packaging}). In parallel, the usage contract (\textit{License generation}) is issued. After these steps, the encrypted content and the license are delivered to the user. On the user device, if the reading application is legitimate and will satisfy and enforce the license (\textit{License validation and enforcement}), the key is used to decrypt (\textit{Content descrambling}) the file and the content is now displayed to the user screen (\textit{Content rendering}). 
+
+\begin{figure}[h!]
    \centering
    	\includegraphics{indicare_drm}
    \caption{A generic DRM system (Copied from Bo\v{s}tjan Maru\v{s}i\v{c} et al. (2005) \cite{indicare:tiramisu}).}
    \label{fig:def:drm_scheme}
 \end{figure}
 
-A typical DRM content protection process is presented in figure \ref{fig:def:drm_scheme}. On the provider side, once the user purchases content, a key is associated to the user identity. The key will be used to sign the file to make the copy unique and protect the content with encryption (figure \ref{fig:def:drm_scheme}: \textit{Scrambling and Packaging}). In parallel, the usage contract (\textit{License generation}) is issued. After these steps, the encrypted content and the license are delivered to the user. On the user device, if the reading application is legitimate and will satisfy and enforce the license (\textit{License validation and enforcement}), the key is used to decrypt (\textit{Content descrambling}) the file and the content is now displayed to the user screen (\textit{Content rendering}). 
-
 Even with strong encryption and full control on the software and hardware, there will always be ways to break any technical measure. To hamper software cracking to be implemented, distributed and used for protection removal, new articles have been added in the international copyright treaty to make cracking technologies illegal. 
 
-Daniels (2009) uses the term \textquotedblleft \textbf{hard DRM}\textquotedblright ~to describe the DRM system that restricts physical access and usage of the file \cite{dan:hard-soft-drm-1}. Rosenblatt (2012) describes it as \textquotedblleft \textbf{heavyweight DRM}\textquotedblright. With that definition, he introduces the \textquotedblleft \textbf{lightweight DRM}\textquotedblright ~concept which is derived from the password-based encryption \cite{idpf:lcp-uc}. With the \textbf{password protection}\label{def:password_protection} approach, there is no need to call back a distant server for authentication since the protection is embedded within the file. The key to decrypt the file is a password that the user has to enter before he can access the content. Like with hard DRM, this technique can also manage the authorization such as restricting printing or limiting copy of content. Usually, as there is no communication with a authentication server, this technology will not block concurrent access nor limit the number of devices which host copies of the file.
+Daniels (2009) uses the term \textquotedblleft \textbf{hard DRM}\textquotedblright ~to describe the DRM system that restricts physical access and usage of the file \cite{dan:hard-soft-drm-1}. Rosenblatt (2012) describes it as \textquotedblleft \textbf{heavyweight DRM}\textquotedblright. With that definition, he introduces the \textquotedblleft \textbf{lightweight DRM}\textquotedblright ~concept which is derived from the password-based encryption \cite{idpf:lcp-uc}. With the \textbf{password protection}\label{def:password_protection} approach, there is no need to call back a distant server for authentication since the protection is embedded within the file. The key to decrypt the file is a password that the user has to enter before s/he can access the content. Like with hard DRM, this technique can also manage the authorization such as restricting printing or limiting copy of content. Usually, as there is no communication with a authentication server, this technology will not block concurrent access nor limit the number of devices which host copies of the file.
 
 \section{Social DRM, Watermark and Fingerprint}
 
@@ -504,9 +504,9 @@ Watermark consists of data representing the user that are inserted and hidden in
    \label{fig:def:drm_water_class}
 \end{figure}
 
-Fingerprint is a technique only to identify a copy of a file by generating a cryptographic hash. With Watermark, these techniques can be used for a posteriori protection. Because identification does not control the permission, the user can do whatever he wants with the file. The idea is, if illegal content appears for example on a peer-to-peer network, to be able to find the user who did it.
+Fingerprint is a technique only to identify a copy of a file by generating a cryptographic hash. With Watermark, these techniques can be used for a posteriori protection. Because identification does not control the permission, the user can do whatever s/he wants with the file. The idea is, if illegal content appears for example on a peer-to-peer network, to be able to find the user who did it.
 
-A similar approach to watermarking is \textbf{social DRM}. The difference is that the information about the user is not hidden but visible. It can be for example part of meta-data or simply visible in plain text e.g. in the footer of every page. In figure \ref{fig:def:drm_socialDRM}, the PackaDRM\footnote{Packaged Digital Rights Messaging or PackaDRM\texttrademark ~ (\url{http://www.enthrill.com/pubtech})}  presents the user information in the \textquoteleft terms and conditions\textquoteright ~section of the e-book. The idea is to let the user do what s/he want but putting social pressure on him/her not to do anything illegal.
+A similar approach to watermarking is \textbf{social DRM}. The difference is that the information about the user is not hidden but visible. It can be for example part of meta-data or simply visible in plain text e.g. in the footer of every page. In figure \ref{fig:def:drm_socialDRM}, the PackaDRM\footnote{Packaged Digital Rights Messaging or PackaDRM\texttrademark ~ (\url{http://www.enthrill.com/pubtech})}  presents the user information in the \textquoteleft terms and conditions\textquoteright ~section of the e-book. The idea is to let the user do what s/he wants but putting social pressure on him/her not to do anything illegal.
  
 \begin{figure}[h]
    \centering
@@ -589,7 +589,7 @@ Apple also has its own e-book file format (iBooks) based on EPUB 3 but with thei
 For e-book, at the application level, there are three categories of software. First to create an e-book, even if some writers will still hand or typewriting their text, it is common that they use a computer with a basic text editor\footnote{such as notepad} or a word processor\footnote{such as Microsoft Word (\url{http://office.microsoft.com/en-us/word/}) or OpenOffice.org Writer (\url{http://www.openoffice.org/product/writer.html})}. The editor then formats the text with a typesetting\footnote{such as \LaTeX (\url{http://www.latex-project.org/})} or a publishing\footnote{such as Adobe InDesign (\url{http://www.adobe.com/products/indesign.html})} or a WYSIWYG\footnote{WYSIWYG stands for What You See Is What You Get} editing\footnote{such as Sigil (\url{http://code.google.com/p/sigil/})} software to generate the e-book file and its metadata. 
 
 Nowadays, some vendors propose the same e-book in different file formats to offer the reader with a greater choice of devices, operating systems and reading applications where the e-book can be read.
-While some of the edition software can generate the e-book in different files formats, it also can be done with a conversion software\label{def:e-book:app:calibre}\footnote{such as Calibre (\url{http://calibre-ebook.com/}) or Pandoc (\url{http://johnmacfarlane.net/pandoc/})}. Sometimes, such conversion is done by the reader himself if he cannot read his e-book on a specific device or with his preferred reading application.
+While some of the edition software can generate the e-book in different files formats, it also can be done with a conversion software\label{def:e-book:app:calibre}\footnote{such as Calibre (\url{http://calibre-ebook.com/}) or Pandoc (\url{http://johnmacfarlane.net/pandoc/})}. Sometimes, such conversion is done by the reader him/herself if s/he cannot read his/her e-book on a specific device or with his/her preferred reading application.
 
 Finally, to read the e-book file, the end user will need a software that will display the e-book on the device screen. Marshall (2010) state that these reading applications should at least provide the same functionalities as what can be achieved with a physical book, such as \cite[chapters 3, 4 and 5]{marshall:reading}:
 \vspace{-17pt} \begin{itemize}
@@ -616,11 +616,11 @@ In addition to the printing equivalent, the electronic book application offers e
 \vspace{-17pt}
 Marshall (2010) also points the advantage that with a devices which can store many files, the reading application could offer searching facilities at the collection level and the use of metadata to better organize and find  content within the library. The metadata can be from the book itself (like title, author, etc.) or user based (both implicit (what was read and when) and intentional (annotations)) \cite[ch. 7]{marshall:reading}.
 
-With new technologies, the e-book can be enriched with multimedia elements like sounds or video and thus gives more interaction to the reader. With internet connected devices (if the user store its library on-line and if the reading application is synchronized) the reader can start reading in the train on his mobile phone and continue reading on his computer once at home. Some reading application offers also text to speech feature via a speech synthesizer that reads the text aloud.
+With new technologies, the e-book can be enriched with multimedia elements like sounds or video and thus gives more interaction to the reader. With internet connected devices (if the user store its library on-line and if the reading application is synchronized) the reader can start reading in the train on his/her mobile phone and continue reading on his/her computer once at home. Some reading application offers also text to speech feature via a speech synthesizer that reads the text aloud.
 
 With e-book, the user behaviour can more easily be studied with analytical tools. The user can then know when, where and how fast s/he reads. Such information can be of high value for researchers and also for publishers who can study what the user likes most and can use this to propose similar contents to the reader.
 
-Part of the e-book interactions described in this chapter are presented as use cases in annex \ref{ebook:uc}.
+Part of the e-book interactions described in this chapter are presented as use cases in appendix \ref{ebook:uc}.
 
 \section{E-book Devices}
 
@@ -648,23 +648,15 @@ The fifth major system, the Microsoft e-book DRM technology, cannot be considere
 \subsection{Adobe DRM in Detail}\label{def:adobe_drm}
 
 Adobe e-book DRM, namely Adobe Digital Experience Protection Technology (ADEPT), is part of their platform which is centred on the Adobe Content Server (ACS)\footnote{\url{http://www.adobe.com/products/content-server.html}}. ACS serves as both hosting and managing PDF and EPUB e-books distribution and encryption. Finally, to access the protected content, the user will use the Adobe Digital Editions\footnote{\url{http://www.adobe.com/products/digital-editions.html}} software for Windows or Mac, or an application written with the Adobe Reader Mobile Software Development Kit (SDK)\footnote{\url{http://www.adobe.com/devnet/readermobile.html}} for e-reader device, tablet or smart-phone \cite{adobe:whitepaper}. Figure \vref{fig:def:adobe_workflow} shows the flow of authoring and delivering an e-book with Adobe solution.
-\begin{figure}[h]
+
+In the normal flow, as seen in figure \vref{fig:def:adobe_cs}, the user visits the publisher or retailer web store to buy an e-book. After the purchase confirmation, the reader will receive an Adobe Content Server Message (.acsm) file. By opening it with the Adobe Digital Editions, the software will communicate online with the Content Server that will encrypt the e-book and provides it DRM protected with the publisher's authorizations for the user based on the reader's adobe ID. Before the user can read the e-book, s/he must also have registered his/her devices. That way, the platform makes sure that the file owned by the user is not distributed further.
+\begin{figure}[h!]
    \centering
    	\includegraphics[width=14.7cm]{adobe_ebook_workflow}
    %
    \caption{Adobe Digital Publishing Solution for eBooks (Copied from Adobe (2012) \cite{adobe:digital_publishing}).}
    \label{fig:def:adobe_workflow}
 \end{figure}
-
-
-In the normal flow, as seen in figure \vref{fig:def:adobe_cs}, the user visits the publisher or retailer web store to buy an e-book. After the purchase confirmation, the reader will receive an Adobe Content Server Message (.acsm) file. By opening it with the Adobe Digital Editions, the software will communicate online with the Content Server that will encrypt the e-book and provides it DRM protected with the publisher's authorizations for the user based on the reader's adobe ID. Before the user can read the e-book, s/he must also have registered his/her devices. That way, the platform makes sure that the file owned by the user is not distributed further. 
-\begin{figure}[h]
-   \setlength{\fboxsep}{3pt}
-   \fbox{\includegraphics[width=14.7cm]{adobe_cs4-overview}} 
-   \caption{Adobe Content Server Architecture (Copied from Adobe (2012) \cite{adobe:content_server_architecture}).}
-   \label{fig:def:adobe_cs}
-\end{figure}
- 
 
 Adobe DRM system allows the user to register up to 6 devices, so the user can access his/her library, annotations, bookmarks, etc. on all of them, and start, for example, to read on the e-reading device, continue on the smart-phone and finish on the laptop. This can also cover the family fair use where people share a home computer.
 
@@ -673,6 +665,12 @@ Adobe DRM system allows the user to register up to 6 devices, so the user can ac
 One natural thing that a user can do with physical books is to share it with friends. 
 Unfortunately, DRM does not allow it since the e-book is protected for the user and its devices only. 
 In order to give sharing facility Adobe offers another way to provide the e-book to the user with a password-only protection \cite[Ability to share section]{adobe:whitepaper}. The password will be encrypted with the file and it will be impossible to modify it. The publisher can choose to let the user define it and allow an open sharing or use a social DRM as an approach where the publisher creates the password for the user (e.g. using user's credit card number, email address, etc.) to refrain the user from sharing it worldwide. This password-only protection option is without Adobe DRM; so the file can either be DRM protected or password protected but not both. 
+\begin{figure}[h]
+   \setlength{\fboxsep}{3pt}
+   \fbox{\includegraphics[width=14.7cm]{adobe_cs4-overview}} 
+   \caption{Adobe Content Server Architecture (Copied from Adobe (2012) \cite{adobe:content_server_architecture}).}
+   \label{fig:def:adobe_cs}
+\end{figure}
 
 One advantage of Adobe e-book DRM when compared to Amazon and Apple is that the user is not \textquotedblleft imprisoned in a walled-garden system\textquotedblright ~\cite[Open environment section]{adobe:whitepaper} and can purchase DRM protected e-books and/or borrow from different vendors/libraries and can aggregate, organize and read them within the same application. Apple iBookstore allows only iOS devices to purchase files from their store and also prevents them to get e-books from a retailer who uses a different DRM in their iBooks application. And to finish the Apple close loop, an e-book created with their iBooks Author tool can only be sold through iBookstore \cite{zdnet:apple_ibooks_license}. Amazon Kindle device also locks the user with a single vendor. Adobe argues that many vendors use their DRM system making the multiple vendors aggregation possible. However, the Adobe Digital Editions will not allow opening an e-book encrypted with another DRM.
 
@@ -682,6 +680,10 @@ Another claim of the Adobe whitepaper \cite[Device interoperability section]{ado
 
 
 On the Adobe price politic, in 2008, the license for the Adobe Content Server was \$5000\footnote{United States dollar (USD)} plus an extra \$1500 per year for the support, maintenance, upgrade and the access to the Digital Signing Service \cite{adobe:content_server_price}. And in 2012, from the Adobe Technology Partner in Europe \cite{ctrlpublishing:content_server_price}, the license was \$8000 plus \$2000 per year support. They also charge \$2495 for the installation and configuration. On top of that price, signing one e-book permanently will cost \$0.22 (\$0.08 for a 0-60 day expiring (e.g. for library lending)). If such price is affordable for a big publisher, it can be too much for a small one.
+
+As an example,\label{def:e-book-sale-fi} based on the yearly sales in Finland (see figure \ref{fig:def:e-book-sale-fi}), it can be reasonable to say that a publisher sells ten thousand e-books per year. If they want to cover the license and installation (e.g. over a three year period) costs, the yearly fee plus the 22 cents per e-book, they would have to charge an extra \$0.77 per e-book and that does not include other charges for maintaining a server, such as hardware/software installation and maintenance, electricity, domain name and internet address, etc. 
+
+It is not possible for a user to offer or resell his/her e-books. Due to the fact that the DRM is associated to the user and the device, it will be hard to try to read an e-book on a public computer (e.g. in an internet coffee). Also, if the user reaches the limit of the 6 registered devices, buys a new computer and wants an old one to be unregistered to replace it with his/her new one, s/he will face a long procedure to be able to do so.
 \begin{figure}[h]
    \setlength{\fboxsep}{3pt}
    \fbox{\includegraphics[width=14.1cm]{e-book-sales-finland}}
@@ -689,10 +691,6 @@ On the Adobe price politic, in 2008, the license for the Adobe Content Server wa
    (Copied from Finnish Book Publishers Association (2012) \cite{kustantajat:year_sale_ebook}).}
    \label{fig:def:e-book-sale-fi}
 \end{figure}
-
-As an example,\label{def:e-book-sale-fi} based on the yearly sales in Finland (see figure \ref{fig:def:e-book-sale-fi}), it can be reasonable to say that a publisher sells ten thousand e-books per year. If they want to cover the license and installation (e.g. over a three year period) costs, the yearly fee plus the 22 cents per e-book, they would have to charge an extra \$0.77 per e-book and that does not include other charges for maintaining a server, such as hardware/software installation and maintenance, electricity, domain name and internet address, etc. 
-
-It is not possible for a user to offer or resell his/her e-books. Due to the fact that the DRM is associated to the user and the device, it will be hard to try to read an e-book on a public computer (e.g. in an internet coffee). Also, if the user reaches the limit of the 6 registered devices, buys a new computer and wants an old one to be unregistered to replace it with his/her new one, s/he will face a long procedure to be able to do so.
 
 About two years after the release of the Adobe Digital Editions, the explanation on how to circumvent the Adobe ADEPT DRM was published on the I$\heartsuit${\footnotesize CABBAGES} %\textsc{cabbages}
  blog\label{def:adobe_drm_crack} \cite{icabbages:adobe_drm_hack}. The author specifies that the Adobe file encryption was strong but the weakness was in how the Adobe Digital Editions hide the key. Nowadays, there are companies such as epubor\footnote{\url{http://www.epubor.com/adobe-digital-editions-ade-drm-removal.html}} that do business by selling DRM removal tools.
@@ -719,7 +717,7 @@ About two years after the release of the Adobe Digital Editions, the explanation
 %- w3c protection (almost no hope?)\\
 %- ...
 
-\section{DRM Encryption Pillar Using W3C Standard}
+\section{DRM Encryption Pillar Using W3C Standard}\label{tec:impl}
 
 This thesis studied whether a DRM system can be made to technically protect an e-book while at the same time reducing the restriction to the fair use. Currently, one drawback of the DRM system is the lack of interoperability, like the impossibility to read an e-book on different platform. Thus, it becomes interesting to test if the upcoming W3C Web Cryptography API\footnote{\url{http://www.w3.org/TR/WebCryptoAPI}} standard could be used for the protection and encryption part of such DRM system.
 
@@ -730,7 +728,7 @@ The idea to make one part of a DRM system with the Web Cryptography API originat
 With the Web Cryptography API being in the draft state and with most of the exiting browsers having only a partial implementation of it\footnote{\url{http://www.w3.org/2012/webcrypto/wiki/Main_Page#First_implementations}},
 the PolyCrypt\footnote{\url{http://polycrypt.net/}} implementation is used as a fall-back. That library tests and exposes the needed cryptography libraries if not yet implemented natively by the browser. 
 
-The starting point for the code is the web-crypto-samples application\footnote{\url{https://github.com/nvdbleek/web-crypto-samples}}, Copyright (c) 2013 Nick Van den Bleeken under MIT License. The file \url{base64.js} is an exact copy from this application, used as a library. Part of his \url{utils.js} and \url{encrypt.js} scripts are derived into the \url{keydecrypt.js} code as seen in annex \ref{source:code}.
+The starting point for the code is the web-crypto-samples application\footnote{\url{https://github.com/nvdbleek/web-crypto-samples}}, Copyright (c) 2013 Nick Van den Bleeken under MIT License. The file \url{base64.js} is an exact copy from this application, used as a library. Part of his \url{utils.js} and \url{encrypt.js} scripts are derived into the \url{keydecrypt.js} code as seen in appendix \ref{source:code}.
 
 \subsection{Technical Implementation Using Web Cryptography API}\label{tec:impl:w3c}
 
@@ -794,7 +792,7 @@ EOF;
 $res = openssl_pkey_get_public($key);
 \end{lstlisting}\vspace{-12pt}
 
-With the public key successfully imported, the server is ready for the encryption process. The PHP script will first get the content of the uncompressed EPUB file stored in folder not accessible from internet as seen in the annex \ref{source:code} encrypt.php source code file. With a maximum of 1968 bits long string that can be encrypted with the 2048 bits long key, the content of the file to be encrypted is chunked  into pieces of 123 characters ($123 \cdot 16 = 1968$) and each of the substring gets encrypted individually as shown in the listing \ref{php:encrypt}. This operation correspond to the ENCRYPT-ASSYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}.
+With the public key successfully imported, the server is ready for the encryption process. The PHP script will first get the content of the uncompressed EPUB file stored in folder not accessible from internet as seen in appendix \ref{source:code} encrypt.php source code file. With a maximum of 1968 bits long string that can be encrypted with the 2048 bits long key, the content of the file to be encrypted is chunked  into pieces of 123 characters ($123 \cdot 16 = 1968$) and each of the substring gets encrypted individually as shown in the listing \ref{php:encrypt}. This operation correspond to the ENCRYPT-ASSYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}.
 
 \vspace{-12pt}\begin{lstlisting}[language=PHP,caption={Encrypting the content of a file with the public key},label=php:encrypt]
 //the file with the encrypted content
@@ -854,8 +852,8 @@ function decryptedToBlob(){
 }
 \end{lstlisting}\vspace{-12pt}
 
-Part of the source code is listed into annex \ref{source:code}.
- The \url{genkey_and_export.html} and \url{keydecrypt.js} representing the client side of the application responsible for the local operation of generating the keys, exporting the public key, decrypting the content with the private key and rendering the result to the user. The \url{encrypt.php} file represents the server side of the application responsible for importing the user public key and encrypting the content. The source code files that are not listed in annex \ref{source:code} are the non-modified files used as library, namely the PolyCrpt\footnote{\url{https://github.com/polycrypt/polycrypt/tree/master/src}}, Copyright (C) Raytheon BBN Technologies Corp, 2013, published under BSD 3-clause license\footnote{\url{https://github.com/polycrypt/polycrypt/blob/master/license.txt}} and the \url{base64.js}\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/js/lib/base64.js}} file , Copyright (c) 2013 Nick Van den Bleeken under MIT License\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/LICENSE}}.
+Part of the source code is listed into appendix \ref{source:code}.
+ The \url{genkey_and_export.html} and \url{keydecrypt.js} representing the client side of the application responsible for the local operation of generating the keys, exporting the public key, decrypting the content with the private key and rendering the result to the user. The \url{encrypt.php} file represents the server side of the application responsible for importing the user public key and encrypting the content. The source code files that are not listed in appendix \ref{source:code} are the non-modified files used as library, namely the PolyCrpt\footnote{\url{https://github.com/polycrypt/polycrypt/tree/master/src}}, Copyright (C) Raytheon BBN Technologies Corp, 2013, published under BSD 3-clause license\footnote{\url{https://github.com/polycrypt/polycrypt/blob/master/license.txt}} and the \url{base64.js}\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/js/lib/base64.js}} file , Copyright (c) 2013 Nick Van den Bleeken under MIT License\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/LICENSE}}.
  
 A demonstration of this application is running at
   \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and the source code is available at the same place or in github\footnote{\url{https://github.com/patrick-ausderau/WebCryptoAPI}}. This software is licensed under the  GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This application encrypts the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; this e-book originates from Project Gutenberg\footnote{\url{http://www.gutenberg.org/ebooks/2701}} where it is freely available.
@@ -908,7 +906,7 @@ IDPF envisions some possible weaknesses. First, the LCP, like any DRM, is likely
 such as the illegality of a DRM removal tool. While modern DRM systems have some possibilities to recover from cracks and resist to them, the LCP will not benefit from such features and because it is designed not to spy on the user, it means that it is not possible to monitor user suspicious activities \cite{idpf:lcp-rfp}. %[What Is LCP? section]
 The other weaknesses concern the difficulties to have some business models such as \textquotedblleft Domain authentication\textquotedblright, \textquotedblleft License chaining\textquotedblright, \textquotedblleft Master-slave schemes\textquotedblright ~or \textquotedblleft Forward-and-delete\textquotedblright ~\cite{idpf:lcp-rfp}. %[What Is LCP? section]
 
-Another concern is how IDPF will deal with free\footnote{free as in freedom.} reading software licensed under the GNU General Public License Version 3 (GPLv3) such as Calibre\footnote{Calibre is a e-book reading application that also offers other tools such as library management, synchronization with multiple devices, e-book file conversion, etc. (from: \url{http://calibre-ebook.com/about})}. The GPLv3 section 3 of the terms and conditions state that \textquotedblleft [\ldots] you waive any legal power to forbid circumvention of technological measures [\ldots]\textquotedblright ~\cite{fsf:gplv3}, in other words, anyone with programming skills would legally have the right to modify the Calibre software to e.g. add a feature to \textquoteleft save the EPUB e-book unencrypted\textquoteright ~and the right to distribute such modified version of the application. So will IDPF forbid free application to implement the LCP and in doing so, will it lose the interoperability? Or will they allow such software to implement LCP, knowing that the protection can legally be nullified?
+Another concern is how IDPF will deal with free\footnote{free as in freedom.} reading software licensed under the GNU General Public License Version 3 (GPLv3) such as Calibre\footnote{Calibre is a e-book reading application that also offers other tools such as library management, synchronization with multiple devices, e-book file conversion, etc. (from: \url{http://calibre-ebook.com/about})}. The GPLv3 section 3 of the terms and conditions state that \textquotedblleft [\ldots] you waive any legal power to forbid circumvention of technological measures [\ldots]\textquotedblright ~\cite{fsf:gplv3}, in other words, anyone with programming skills would legally have the right to modify the Calibre software to e.g. add a feature to \textquoteleft save the EPUB e-book unencrypted\textquoteright ~and the right to distribute such a modified version of the application. So will IDPF forbid free application to implement the LCP and in doing so, will it lose the interoperability? Or will they allow such software to implement LCP, knowing that the protection can legally be nullified?
 
 Finally, there is no clear date when the LCP will be released, not even a decision to stop or continue exists. In the use cases and requirements, it only states that \textquotedblleft IDPF solicit contributions of existing technology that could become the basis of a market-relevant solution for LCP within the next 12 calendar months or less\textquotedblright ~\cite{idpf:lcp-uc}, %[Why Consider LCP for EPUB? section]
 meaning several more months. And also that IDPF envisions the possibility that there can be no LCP at all: \textquotedblleft [\ldots] it does not represent any commitment by the IDPF to establish a solution. [\ldots] it may become clear that no feasible standardized solution would be sufficiently useful or accepted, or that no solution is forthcoming that will sufficiently address critical requirements\textquotedblright ~\cite{idpf:drm-rfc}. 
@@ -949,7 +947,7 @@ meaning several more months. And also that IDPF envisions the possibility that t
 \chapter{DRM-Free Approaches}\label{free}
 \section{Opponents to DRM and Limitations of Technical Protections}\label{def:opp} 
 
-The opponent to the DRM, such as the Free Software Foundation (FSF) through their \textquoteleft defective by design\textquoteright ~\cite{fsf:defectivebydesign} campaign define DRM as \textquotedblleft Digital Restriction Management\textquotedblright ~because DRM restricts fair use by limiting the right to make private copies and backups and making it hard or impossible to share, swap, offer or resell purchased files. It also \textquotedblleft imprisons\textquotedblright ~the user in non-free\footnote{Free here has the meaning freedom/liberty in opposition to proprietary (so nothing related to the price/cost).} reading software where the user is forced to agree with policy that may downgrade his rights with new software upgrade or otherwise lose all of his/her files. DRM raises privacy concerns since such software can monitor user hard disk and spy computer usage. FSF also denounces a back-door that allows the vendor to remotely delete the e-books from the user devices. For example, Amazon removed the George Orwell 1984 e-book from hundreds of users\footnote{\url{http://www.defectivebydesign.org/blog/1248}}. In a more recent case, Amazon cleared the full collection from one reader\footnote{\url{http://www.defectivebydesign.org/node/2250}}. 
+The opponent to the DRM, such as the Free Software Foundation (FSF) through their \textquoteleft defective by design\textquoteright ~\cite{fsf:defectivebydesign} campaign define DRM as \textquotedblleft Digital Restriction Management\textquotedblright ~because DRM restricts fair use by limiting the right to make private copies and backups and making it hard or impossible to share, swap, offer or resell purchased files. It also \textquotedblleft imprisons\textquotedblright ~the user in non-free\footnote{Free here has the meaning freedom/liberty in opposition to proprietary (so nothing related to the price/cost).} reading software where the user is forced to agree with policy that may downgrade his/her rights with new software upgrade or otherwise lose all of his/her files. DRM raises privacy concerns since such software can monitor user hard disk and spy computer usage. FSF also denounces a back-door that allows the vendor to remotely delete the e-books from the user devices. For example, Amazon removed the George Orwell 1984 e-book from hundreds of users\footnote{\url{http://www.defectivebydesign.org/blog/1248}}. In a more recent case, Amazon cleared the full collection from one reader\footnote{\url{http://www.defectivebydesign.org/node/2250}}. 
 
 The EU DIRECTIVE 2001/29/EC \cite[article 6(4)]{eur-lex:2001/29/EC} requests that DRM respects some exceptions listed in article 5. But for example, it makes the fair use of making private copies optional and then, in the Finnish COPYRIGHT ACT \cite[section 50c(1)]{finlex:copyright_act} this exception is not present. Therefore, in Finland, a DRM can legally forbid the private copy that confirms the FSF concerns. There are many other fair uses that may be restricted by DRM such as reproduction by the press, communication to the public \cite[article 5(3)(c)]{eur-lex:2001/29/EC}, use for purpose of caricature, parody or pastiche \cite[article 5(3)(k)]{eur-lex:2001/29/EC} or use during religious celebration \cite[article 5(3)(g)]{eur-lex:2001/29/EC}.
 
@@ -960,14 +958,13 @@ Because DRM can limit the number of devices the user can use to read his/her e-b
 
 The Electronic Frontier Foundation (EFF) \cite{eff:drm} shares same kinds of concerns as the FSF. EFF goes further against big companies by stating that the DRM is an anti-competitive practice. For example, the vendor might offer the e-book in a single protected proprietary file format, forcing the reader to access it only with a specific hardware and/or software. This will restrict the user to access DRM protected content from a concurrent with the same device/application; it will lock the user to a single vendor. That type of strategy is common with Amazon and Apple. On the other hand, if the publisher imposes protection, a small reseller will have a problem to pay for a DRM system, closing the market for the big companies. According to Doctorow (2011), the protection does not benefit the writer, nor the publisher or the end user but instead puts the power in the hands of the DRM provider \cite[chapter 28]{doctorow:context}.
 
-According to EFF, \textquotedblleft putting DRM on e-books is short-sighted, futile, and doomed\textquotedblright ~\cite{eff:e-book_drm_fail}, 
+According to EFF, \textquotedblleft putting DRM on e-books is short-sighted, futile, and doomed\textquotedblright ~\cite{eff:e-book_drm_fail}, because the best e-book DRM will suffer from the analog hole. In other words, the protection ends once displayed on screen. So anyone with a digital camera and an Optical Character Recognition (OCR) software can get an almost perfect DRM-free copy in a few minutes. For example, in figure \ref{fig:def:e-book_ripper}, a book ripper designed to digitalize physical books\footnote{Where the book is placed in the middle and when turning every pages, take a picture of the odd page with the left camera (the right one for the even page). When the end of the book is reach, the pictures are treated with an OCR software that will produce the e-book.} is used to free up a DRM protected e-book from a reader device. 
 \begin{figure}[h]
    \centering
    	\includegraphics[width=7.1cm]{flickr_e-book-ripper}
    \caption{e-book ripper (Copied from bkrpr.org (2009) \cite{flickr:e-book_ripper}).}
    \label{fig:def:e-book_ripper}
 \end{figure}
-because the best e-book DRM will suffer from the analog hole. In other words, the protection ends once displayed on screen. So anyone with a digital camera and an Optical Character Recognition (OCR) software can get an almost perfect DRM-free copy in a few minutes. For example, in figure \ref{fig:def:e-book_ripper}, a book ripper designed to digitalize physical books\footnote{Where the book is placed in the middle and when turning every pages, take a picture of the odd page with the left camera (the right one for the even page). When the end of the book is reach, the pictures are treated with an OCR software that will produce the e-book.} is used to free up a DRM protected e-book from a reader device. 
 
 Another fear for the user is that the vendor goes bankrupt or the DRM provider stops to maintain the system. This happened when Microsoft\label{def:opp_ms} announced that they will no longer support the .lit file format: \textquotedblleft Microsoft is discontinuing Microsoft Reader effective August 30, 2012, which includes download access of the Microsoft Reader application from the Microsoft Reader website\textquotedblright ~\cite{microsoft:reader}; so the users may lose access to their files when their devices will stop working. 
 
@@ -1018,7 +1015,7 @@ Another participation to the Next Media project consisted of a presentation of s
 For the eReading work-package of the Next Media project, there were two presentations in seminars, one in June 2012 and the next one in December 2012. 
 The Next Media project also provided a fifteen-minute presentation at the Next Media Result Seminar in February 2013. The slide show of this presentation is available on the Next Media website\footnote{\url{http://www.nextmedia.fi/779350088/en/read/Next_Media_Result_Seminar_6.2.2013}} and the video recording is available on the Vimeo platform\footnote{\url{http://vimeo.com/59498270}}. A 45-minute presentation was held in a conference for the Finnish Book Publishers Association and two authors' union members in February 2012. The slide shows of all the presentations also are published on github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
 
-The last task produced for the Next Media project was the participation in the reflection group about e-book protection initiated by the Finnish Book Publishers Association. The outcome of this work is the DRM recommendation sent to the Finnish publishers in June 2013. The main result of this publication is that two major Finnish publishers abandoned DRM in favour of the watermark and Social DRM lighter protection system\footnote{\url{https://www.sttinfo.fi/release?releaseId=8700912}}. The DRM recommendation was accompanied by the Web crawler text presented in annex \ref{app:crawl} or as a stand alone text in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}
+The last task produced for the Next Media project was the participation in the reflection group about e-book protection initiated by the Finnish Book Publishers Association. The outcome of this work is the DRM recommendation sent to the Finnish publishers in June 2013. The main result of this publication is that two major Finnish publishers abandoned DRM in favour of the watermark and Social DRM lighter protection system\footnote{\url{https://www.sttinfo.fi/release?releaseId=8700912}}. The DRM recommendation was accompanied by the Web crawler text presented in appendix \ref{app:crawl} or as a stand alone text in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}
 
 As a result of this thesis study, an application was also made. It demonstrates that the upcoming W3C Web Cryptography API can be used to encrypt data. It also shows some of the limitation of DRM systems such as the difficulty to hide private keys. It also outlines the risks in using the current implementation of the Web Cryptography API for serious cryptographic operations.
 
@@ -1029,7 +1026,7 @@ During this research work, I studied the existing and upcoming technical protect
 
 However, a technical solution that could guarantee a fair revenue to the author of an e-book while not restricting the user freedom to share copies of it, could be to implement a script that would present a donate button inside the e-book to the reader. With such a button, if the reader likes the e-book, s/he could very easily offer a small sum of money to the author as a reward for his/her work. A similar system already exists on the internet with for example Flattr\footnote{\url{https://flattr.com/}}.
 
-At the non technical level, there is also an important lewis that can be used to fight copyright infringements. At the market level, it is important that the publishers offer a rich collection of titles in electronic form, make them easily available, propose attractive prices and ideally do not impose DRM restriction \cite[p. 13]{OpinionWay:baro_v2}. With that approach, the user would be less tempted to search for the illegal alternatives. Another approach that would be interesting to study, could be to test Crowdfunding where the author writes and publishes his/her new book only if s/he gets its funding beforehand.
+At the non technical level, there is also an important lever that can be used to fight copyright infringements. At the market level, it is important that the publishers offer a rich collection of titles in electronic form, make them easily available, propose attractive prices and ideally do not impose DRM restriction \cite[p. 13]{OpinionWay:baro_v2}. With that approach, the user would be less tempted to search for the illegal alternatives. Another approach that would be interesting to study, could be to test Crowdfunding where the author writes and publishes his/her new book only if s/he gets its funding beforehand.
 
 Another important lever is to continuously educate people about the copyright. With Crowdfunding or a donate option, this work could be made easy as \textquotedblleft did you offer 1\euro ~to your favourite author this month?\textquotedblright ~\cite{gnu:freedom_or_copyright}. Finally, the other proposition is to collect flat-rate tax that would be distributed to the authors. Such proposition requires a work at the political and legal level in order to adapt the copyright laws to the reality of the internet. For example, a Swiss governmental group\footnote{\url{http://www.ejpd.admin.ch/content/ejpd/fr/home/dokumentation/mi/2012/2012-08-09.html}} is working on this question. 
 
@@ -1039,17 +1036,17 @@ This research work was limited to the copyright protection on an electronic book
 
 \chapter{Conclusions}\label{conc}
 
-The  need to have copyright for an electronic book (e-book) in order to be respected when it comes to the moral and material interests of an author, is a legitimate one. However, this study shows that none of the technical options to protect e-books from illegal uses are perfect. Trying to impose the rules of the physical world to the electronic one simply does not work. 
+The  need to have copyright for an electronic book (e-book) to be respected when it comes to the moral and material interests of an author, is a legitimate one. However, this study shows that none of the technical options to protect e-books from illegal uses are perfect. Trying to impose the rules of the physical world to the electronic one simply does not work. 
 
 For the e-book, the \textquoteleft hard DRM\textquoteright\footnote{Digital Right Management} is not an appropriate solution as it does not prevent nor stop the illegal file sharing. On the contrary, it restricts the freedom of a legitimate reader while allowing a cracker full rights. The DRM also adds extra costs in terms of price and infrastructure for the publisher/vendor and tends to fragment the market or even worse, creates a monopoly. However, in some cases, such as company confidential documents, where the reader and provider agree on the need for protection, the DRM may be a good solution. 
 
-When it comes to the Lightweight Content Protection (LCP), it is quite interesting to follow the IDPF\footnote{International Digital Publishing Forum} work. Even if the LCP still has unclear costs, it could be an alternative to \textquoteleft hard DRM\textquoteright ~for a vendor or a library when the publisher imposes technical protection. If it would be implemented, it might also reduce some of the drawbacks with better interoperability, no spying and a real ownership for the reader. But, as with the \textquoteleft hard DRM\textquoteleft , it could be cracked to remove all the restrictions. 
+When it comes to the Lightweight Content Protection (LCP), it is quite interesting to follow the IDPF\footnote{International Digital Publishing Forum} work. Even if the LCP still has unclear costs, it could be an alternative to \textquoteleft hard DRM\textquoteright ~for a vendor or a library when the publisher imposes technical protection. If it were implemented, it might also reduce some of the drawbacks with better interoperability, no spying on the user and a real ownership for the reader. But, as with the \textquoteleft hard DRM\textquoteleft , the LCP could be cracked to remove all the restrictions. 
 
-The Social DRM and watermark combination might be the least problematic technical solution since it does not impose restriction on usage, but offers some level of protection and helps deter from copyright infringement. However, it raises privacy issues and could participate in restricting the freedom of opinion.
+The Social DRM and watermark combination might be the least problematic technical solution since it does not impose restriction on usage, but offers some level of protection and helps to deter from copyright infringement. However, it raises privacy issues and could contribute in restricting the freedom of opinion.
 
-For these reasons, for e-books to be DRM-free would be the better option. It might show that the authors trust and respect their readers. Copyright and licenses, such as the Creative Commons, do provide protection and being DRM-free does not prevent anyone from doing business. 
+Based on the results of this study, it became apparent that being DRM-free is the best option for the e-book. It might show that the authors trust and respect their readers. Copyright and licenses, such as the Creative Commons, do provide protection and being DRM-free does not prevent anyone from doing business. 
 
-Finally, this thesis proposes that further research to find a working solution in reducing copyright infringement should also be studied at the educational, financial, political and legal levels.
+Finally, this thesis proposes that further research to find a working solution in reducing copyright infringement should also be conducted at the educational, financial, political and legal levels.
 
 %=================== BIBLIOGRAPHY =================
 \begin{flushleft}\begin{singlespacing}
@@ -1089,10 +1086,11 @@ Finally, this thesis proposes that further research to find a working solution i
 
 \chapter{Web Crawler}\label{app:crawl}
 
-Pant et al. \cite{inweb:crawling} define \textbf{Web Crawlers} as programs that exploit the graph structure of the Web to
-move from page to page. Crawlers are also known as spiders, robots or simply bots, and in their infancy were also named wanderers, fish or worms. In 1993, the first web crawler, the World Wide Web Wanderer\footnote{\url{http://www.mit.edu/people/mkgray/net/background.html}}, was used to compile statistics about the growth of the web \cite{naj:crawl}. They quickly became a central component of search engines to collect web pages that are to be indexed (for example the googlebot\footnote{\url{http://support.google.com/webmasters/bin/answer.py?hl=en&answer=182072}}). Crawlers are used for many other applications such as archiving the web (e.g. Heritrix\footnote{\url{https://webarchive.jira.com/wiki/display/Heritrix/Heritrix}} crawler) or specialized data mining, for example for price comparison services (e.g. the ShopWiki\footnote{\url{http://www.shopwiki.com/w/Help:Bot}} crawler) or searching for copyright violation (e.g. the Digimarc Guardian\footnote{\url{http://www.attributor.com/solutions/solutions.php?X=1.1}} or the Belgian Librius SINBAD\footnote{\url{http://www.librius.com/over-librius/wat-doet-librius/Librius-SINBAD/}} crawlers) and more (e.g. spambot (used to collect email addresses and send unsolicited messages), etc.). 
+Pant et al. (2004) define \textbf{Web Crawlers} as programs that exploit the graph structure of the Web to
+move from page to page \cite{inweb:crawling}. Crawlers are also known as spiders, robots or simply bots, and in their infancy were also named wanderers, fish or worms. In 1993, the first web crawler, the World Wide Web Wanderer\footnote{\url{http://www.mit.edu/people/mkgray/net/background.html}}, was used to compile statistics about the growth of the web \cite{naj:crawl}. They quickly became a central component of search engines to collect web pages that are to be indexed (for example the googlebot\footnote{\url{http://support.google.com/webmasters/bin/answer.py?hl=en&answer=182072}}). Crawlers are used for many other applications such as archiving the web (e.g. Heritrix\footnote{\url{https://webarchive.jira.com/wiki/display/Heritrix/Heritrix}} crawler) or searching for copyright violation (e.g. the Digimarc Guardian\footnote{\url{http://www.attributor.com/solutions/solutions.php?X=1.1}} or the Belgian Librius SINBAD\footnote{\url{http://www.librius.com/over-librius/wat-doet-librius/Librius-SINBAD/}} crawlers). Web crawlers can also be used for
+specialized data mining, for example, price comparison services (e.g. the ShopWiki\footnote{\url{http://www.shopwiki.com/w/Help:Bot}} crawler) and other things such as a spambot used to collect email addresses and send unsolicited messages, etc. 
 
-The operations of web crawlers, as described by Manning et al. \cite[pp. 405-420]{man:info_ret}, are as follow:
+The operations of web crawlers, as described by Manning et al. (2008), are as follow:
 \vspace{-17pt}\begin{enumerate}
 \setlength{\itemsep}{0cm}%
 \setlength{\parskip}{0cm}%
@@ -1102,13 +1100,14 @@ The operations of web crawlers, as described by Manning et al. \cite[pp. 405-420
 	\begin{enumerate}
 	\setlength{\itemsep}{0cm}%
 	\setlength{\parskip}{0cm}%
-	\item Extract the text, images, etc. for the data mining process, or in the case of a search engine to fed the indexer.
+	\item Extract the text, images, etc. for the data mining process, or in the case of a search engine to feed the indexer.
 	\item Extract the links to other pages, files, etc. that are added to a \textit{URL frontier}, corresponding to the resources that have yet to be fetched by the crawler. Initially, the URL frontier contains the seed set.
 	\end{enumerate}%\vspace{-4pt}
-\item Once the resource has been fetched and parsed, its URL is either removed from the URL frontier or time stamped for a later visit.
+\item Once the resource has been fetched and parsed, its URL is either removed from the URL frontier or time stamped for a later visit. \cite[pp. 405-420]{man:info_ret}
 \end{enumerate}
-\vspace{-9pt}
-Manning et al. \cite[pp. 405-420]{man:info_ret} also list the features web crawler must or should provide. Ideally, a crawler must be \textbf{robust} to avoid spider trap, which are server generating web pages making the crawler downloading million of pages from the same domain and be \textbf{polite}. The politeness is both implicit, for example the crawler will wait some time before downloading a page from the same domain to avoid server overloading and bandwidth consumption and explicit by following the Robots Exclusion Protocol define in the robot.txt\footnote{\url{http://www.robotstxt.org/}} which set what resources a crawler can or not visit and fetch. Malware and spam robots are know to not follow these rules and some commercial crawler such as the Attributor (now Digimarc Guardian) do not respect the exclusion neither, even if understandably necessary, webmasters may block it more aggressively\footnote{\url{http://incredibill.blogspot.fi/2007/11/attributor-post-mortem-copyright.html}}. The features crawler should have concern efficiency, quality, freshness, scalability, extensibility, etc.
+
+
+Manning et al. \cite[pp. 405-420]{man:info_ret} also list the features web crawler must or should provide. Ideally, a crawler must be \textbf{robust} to avoid spider traps, which are server generating web pages making the crawler downloading millions of pages from the same domain. The crawler must also be \textbf{polite}. The politeness is implicit, for example the web crawler will wait some time before downloading a page from the same domain to avoid server overloading and bandwidth consumption. And the politeness is also explicit, such as when following the Robots Exclusion Protocol rules defined in the robot.txt\footnote{\url{http://www.robotstxt.org/}} which set what resources a crawler can or can not visit and fetch. Malware and spam robots are known to not follow these rules and some commercial crawlers such as the Attributor (now Digimarc Guardian) do not respect the exclusion neither, even if understandably necessary, webmasters may block them more aggressively\footnote{\url{http://incredibill.blogspot.fi/2007/11/attributor-post-mortem-copyright.html}}. The crawlers features should include efficiency, quality, freshness, scalability, extensibility, etc.
 
 
 %============== USE CASES ==========================
@@ -1121,16 +1120,16 @@ Manning et al. \cite[pp. 405-420]{man:info_ret} also list the features web crawl
 
 \chapter{Use Cases}\label{ebook:uc}
 
-In this chapter will be presented an exhaustive list of actions that can be perform with e-books in form of use cases. %The actions are grouped into logical sets 
-First comes the definition of the user roles. These actors are the users who interact with the e-books:
+In this chapter an exhaustive list of actions that can be performed with e-books in form of use cases will be presented. %The actions are grouped into logical sets 
+Below the definition of the user roles is presented. These actors are the users who interact with the e-books:
 \begin{description}[leftmargin=2.3cm, style=sameline] %\itemsep1pt%leftmargin=2.3cm, style=sameline
-\item[Author] A person or a group of person who create (write the text, draw illustration, etc.) a book.
-\item[Individual] Refers to a single person who read an e-book.
+\item[Author] A person or a group of persons who create (write the text, draw illustration, etc.) a book.
+\item[Individual] Refers to a single person who reads an e-book.
 \item[Teacher] Is a person whose work is to bring knowledge to others (usually students).
-\item[Researcher] A person or a group of person running studies on a specific subject in order to reach a new understanding or discovering new information~\cite{cambridge:dictionary:researcher}.
+\item[Researcher] A person or a group of persons running studies on a specific subject in order to reach a new understanding or discovering new information~\cite{cambridge:dictionary:researcher}.
 \item[Publisher] A company or a person who publish books and e-books and promote them.
-\item[Seller] A person or a company who sell or rent e-books.
-\item[Library] Is an institution who make available to the public by lending cultural, educational and research material, such as books, magazines, CDs, films, etc. A library is also responsible for maintaining such material collection and may also serve for archiving it for future generations~\cite{thefreedictionary:library}.
+\item[Seller] A person or a company who sells or rents e-books.
+\item[Library] Is an institution which make available e-books to the public by lending cultural, educational and research material, such as books, magazines, CDs, films, etc. A library is also responsible for maintaining such material collection and may also serve for archiving it for future generations~\cite{thefreedictionary:library}.
 \end{description}
 
 
@@ -1143,10 +1142,10 @@ First comes the definition of the user roles. These actors are the users who int
 Actors: Individual, Teacher, Researcher.
 
 %\vpageref{uc:buy}
-Prerequisite: The user got an e-book either by buying it (cf. \vref{uc:buy}) or borrowing it (cf. \vref{uc:borrow}). He has an appropriate device (computer, tablet, etc.) and there is an application installed on it able to open and display the e-book.
+Prerequisite: The user got an e-book either by buying it (cf. \vref{uc:buy}) or borrowing it (cf. \vref{uc:borrow}). S/he has an appropriate device (computer, tablet, etc.) and there is an application installed on it which enables to open and display the e-book.
 
-Story: The user has open the reading application on his device. From the application, he clicks the open menu, browses where the e-book file is located and selects it. The application opens the e-book at its first page. At this stage, the user can start reading.\\
-Usually the reading application will also provide to the reader some navigation facilities like moving forward/backward to the next/previews page, going to a specific page, chapter, bookmark (see \vref{uc:annotate}), etc. Such application can also provide zooming (make the text smaller/bigger) functionalities.
+Story: The user has opened the reading application on his/her device. From the application, s/he clicks the open menu, browses where the e-book file is located and selects it. The application opens the e-book at its first page. At this stage, the user can start reading.\\
+Usually the reading application will also provide the reader some navigation facilities such as moving forward/backward to the next/previews page, going to a specific page, chapter, bookmark (see \vref{uc:annotate}), etc. Such application can also provide zooming (make the text smaller/bigger) functionalities.
 
 \begin{figure}[h]
    \fbox{\includegraphics[width=14.9cm]{uc_read_buy}}
@@ -1158,9 +1157,9 @@ Usually the reading application will also provide to the reader some navigation 
 
 Actors: Individual, Teacher, Researcher, Library.
 
-Prerequisite: The user has an appropriate device with an internet connection (in here the assumption is that the buying transaction will be done on the internet through an on-line book store) and a web browser. He also disposes of a payment method (through credit card, paypal, etc.).
+Prerequisite: The user has an appropriate device with an internet connection (in here the assumption is that the buying transaction will be done on the internet through an on-line book store) and a web browser. S/he also disposes of a payment method (through credit card, paypal, etc.).
 
-Story: The user uses his web browser to navigate to the on-line book store. There, he will browse the list of available e-books or use a search facility. Once the user finds the e-book he wants, he orders it (usually by adding it into a shopping cart). By confirming the order, he will be requested for payment (e.g. with credit card). Once the payment is confirmed he will get his e-book through download. The user now owns the e-book and has it as a file on his device.\\
+Story: The user uses his/her web browser to navigate to the on-line book store. There, s/he will browse the list of available e-books or use a search facility. Once the user finds the e-book s/he wants, s/he orders it (usually by adding it into a shopping cart). By confirming the order, s/he will be requested for payment (e.g. with credit card). Once the payment is confirmed s/he will get his/her e-book through download. The user now owns the e-book and has it as a file on his/her device.\\
 An alternative would be that the e-book goes on the cloud (cf. \ref{uc:cloud}), in that case the e-book file is not downloaded on the user device but is stored on-line.
 %\vref
 
@@ -1170,66 +1169,66 @@ Actors: Individual, Teacher, Researcher.
 
 Prerequisite: A lender makes an e-book available (cf. \vref{uc:lend}) to the user on-line through a website, by sending it by email, by sharing it with a social network website or by sharing it with a physical storage medium such as a memory card, USB flash drive, etc. The user has an appropriate device (computer, tablet, etc.) and there is an application installed on it able to open and display the e-book.
 
-Story: The user navigates where the e-book is (e.g. the library website, the sharing place of another user, etc.). He specifies the borrowing period (usually a few hours to a couple of weeks) if not predefine by the lender. The user then retrieves (e.g. by downloading) the e-book file. He now has the read access for the borrowing period. At the same time, the lender looses his read access for that same period.\\
-There should be also option for the user so he can return the e-book before the end of the borrowing period and/or a symmetrical option where the lender can request the e-book back.
+Story: The user navigates where the e-book is (e.g. the library website, the sharing place of another user, etc.). S/he specifies the borrowing period (usually a few hours to a couple of weeks) if not predefined by the lender. The user then retrieves (e.g. by downloading) the e-book file. S/he now has the read access for the borrowing period. At the same time, the lender looses his/her read access for that same period.\\
+There should also be an option for the user to return the e-book before the end of the borrowing period and/or an alternative option where the lender can request the e-book back earlier.
 
-\sout{Alternative story for library: A library owns 5 copies of an e-book and all five copies are borrowed. A user does not want to wait that one of the e-books comes back. The library will charge a fee from the user and use that money to get a temporary extra copy from the publisher and lends that extra copy to the borrower. This is not to be confused with the renting (cf. \vref{uc:rent}) use case; in here the library does not make any benefit, the fee goes integrally to the publisher for getting the temporary extra copy of the e-book.} 2012-01-30 Olli meeting about library DRM => concerning libraries,
-for the customers borrowing have to be free of charge!
+\sout{Alternative story for library: A library owns 5 copies of an e-book and all five copies are borrowed. A user does not want to wait that one of the e-books comes back. The library will charge a fee from the user and use that money to get a temporary extra copy from the publisher and lends that extra copy to the borrower. This is not to be confused with the renting (cf. \vref{uc:rent}) use case; in here the library does not make any benefit, the fee goes integrally to the publisher for getting the temporary extra copy of the e-book.} Story dropped => concerning libraries:
+for their customers borrowing have to be free of charge!
 
 
 \textbf{Use case: Lend an e-book}\label{uc:lend}
 
 Actors: Library, Individual, Teacher, Researcher.
 
-Prerequisite: The user owns an e-book. He has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The borrower will have to have the symmetrical device facilities. The lender has an application installed on his device that help him to modify the e-book access rights.
+Prerequisite: The user owns an e-book. S/he has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The borrower must have the symmetrical device facilities. The lender has an application installed on his/her device that help him/her to modify the e-book access rights.
 
-Story: The user changes the rights of his e-book to the lend state. He specifies the lending period (from few hours to couple of weeks) or alternatively provides a lending range (so the borrower will decide how long he will borrow it). The user puts his e-book on-line (through a website, a social network website) or sends it by email or puts it on a physical storage medium. Once the borrower gets the e-book file, he instantly gets the read access to it and at the same time, the lender looses his read access and his right to lend it (to avoid concurrent lending or  renting (cf. \vref{uc:rent}) of the same e-book) for that same lending period.\\
+Story: The user changes the rights of his/her e-book to the lend state. S/he specifies the lending period (from a few hours to couple of weeks) or alternatively provides a lending range (so the borrower will decide how long s/he will borrow it). The user puts his/her e-book on-line (through a website, a social network website) or sends it by email or puts it on a physical storage medium. Once the borrower gets the e-book file, s/he instantly gets the read access to it and at the same time, the lender looses his/her read access and his/her right to lend it (to avoid concurrent lending or  renting (cf. \vref{uc:rent}) of the same e-book) for that same lending period.\\
 There can be an option where the lender can request the e-book back before the end of the lending period and/or an option for the borrower to return it earlier.
 
 \textbf{Use case: Rent an e-book}\label{uc:rent}
 
 Actors: Seller, Individual, Teacher, Researcher.
 
-Prerequisite: The owner of the e-book has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The renter will have to have the symmetrical device facilities. The owner has an application installed on his device that help him to modify the e-book access rights. 
+Prerequisite: The owner of the e-book has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The renter will have to have the symmetrical device facilities. The owner has an application installed on his/her device that help him/her to modify the e-book access rights. 
 
-Story: The owner changes the rights of his e-book to the rent state. He specifies the renting period (typically from few hours to couple of weeks). Once the renter pays the fee, he gets (by downloading or through removable storage medium) the e-book on his device. He has now the read access to the e-book for the renting period. At the same time, the owner looses his right to read and rent the e-book (to avoid concurrent renting or lending (cf. \vref{uc:lend})) for that same period. \textbf{TO CHECK: DOES THE OWNER HAS TO PAY A SPECIAL TAX TO PUBLISHER/AUTHOR OF THE E-BOOK?}
+Story: The owner changes the rights of his/her e-book to the rent state. S/he specifies the renting period (typically from few hours to couple of weeks). Once the renter pays the fee, s/he gets (by downloading or through removable storage medium) the e-book on his/her device. S/he has now the read access to the e-book for the renting period. At the same time, the owner looses his/her right to read and rent the e-book (to avoid concurrent renting or lending (cf. \vref{uc:lend})) for that same period. \textbf{TO CHECK: DOES THE OWNER HAS TO PAY A SPECIAL TAX TO PUBLISHER/AUTHOR OF THE E-BOOK?}
 
-Alternative story: The seller (owner) can rent as many copies of the e-book he wants. In that case he will pay to the publisher (or the author) an extra fee per rented copies. The idea here is to propose a business approach similar to VOD (Video On Demand).
+Alternative story: The seller (owner) can rent as many copies of the e-book s/he wants. In that case s/he will pay to the publisher (or the author) an extra fee per rented copies. The idea here is to propose a business approach similar to VOD (Video On Demand).
 
 \textbf{Use case: Offer an e-book}\label{uc:offer}
 
 Actors: Individual, Teacher, Researcher, Seller, Library.
 
-Prerequisite: The owner of the e-book has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The receiver will have to have the symmetrical device facilities. The owner has an application installed on his device that help him to modify the e-book access rights.
+Prerequisite: The owner of the e-book has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The receiver will have to have the symmetrical device facilities. The owner has an application installed on his/her device that help him/her to modify the e-book access rights.
 
-Story: The user modifies the ownership of the e-book to be the receiver. He then offers the e-book to that person. He looses all the rights on the e-book. The receiver now owns the e-book and has the full rights (read, lend, etc.) on it.\\
+Story: The user modifies the ownership of the e-book to be the receiver. S/he then offers the e-book to that person. S/he looses all the rights on the e-book. The receiver now owns the e-book and has the full rights (read, lend, etc.) on it.\\
 For a library, if they want to reduce storage (like save server disk space), they can offer e-books that were only rarely borrowed.\\
-For a seller, he can offer e-book for good customer or make special offers like buy ten e-books and pay for nine.
+For a seller, s/he can offer e-book for good customer or make special offers like buy ten e-books and pay for nine.
 
 \textbf{Use case: Resell an e-book}\label{uc:resell}
 
 Actors: Individual, Teacher, Researcher, Seller, Library.
 
-Prerequisite: The owner of the e-book has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The buyer will have to have the symmetrical device facilities. The owner has an application installed on his device that help him to modify the e-book access rights.
+Prerequisite: The owner of the e-book has a device, where the e-book is stored, with an internet connection or a connector for a removable storage medium. The buyer will have to have the symmetrical device facilities. The owner has an application installed on his/her device that help him/her to modify the e-book access rights.
 
-Story: Once the user gets the money payment from the buyer, he modifies the ownership of the e-book. He then transmit (through internet, email or with a removable storage medium) the e-book to the buyer. The buyer now owns the e-book and has the full rights on it. At the same time, the ancient owner looses them.\\
+Story: Once the user gets the money payment from the buyer, s/he modifies the ownership of the e-book. S/he then transmit (through internet, email or with a removable storage medium) the e-book to the buyer. The buyer now owns the e-book and has the full rights on it. At the same time, the ancient owner looses them.\\
 Library sometimes resell books that were rarely read (or broken); so something similar may append with e-books. That allow them to free some space (in this case, disk space).\\
 For a seller, we can image a system similar to a second hand shop where they buy e-books from individuals and resell them.
 
 
 \textbf{Use case: Annotate an e-book}\label{uc:annotate}
 
-As define in the W3C Incubator Use Case Social Annotation~\cite{w3c:uc_annotation}, is consider as an annotation: a bookmark, line mark that the reader can use to quickly navigate to a specific part of the e-book (as example remember where he stop reading to restart reading from there); a comment about a sentence, paragraph, chapter, the all e-book; a summary or a description of the e-book or part of it; etc.
+As define in the W3C Incubator Use Case Social Annotation~\cite{w3c:uc_annotation}, is consider as an annotation: a bookmark, line mark that the reader can use to quickly navigate to a specific part of the e-book (as example remember where s/he stop reading to restart reading from there); a comment about a sentence, paragraph, chapter, the all e-book; a summary or a description of the e-book or part of it; etc.
 
 Actors: Researcher, Teacher, Individual.
 
-Prerequisite: The owner of the e-book has a device, where the e-book is stored, with a reading application that help him to add bookmark. He may also have another application that allow him to write text (a notepad), record voice, etc.
+Prerequisite: The owner of the e-book has a device, where the e-book is stored, with a reading application that help him/her to add bookmark. S/he may also have another application that allow him/her to write text (a notepad), record voice, etc.
 
-Story: The user reads or browses the e-book to a specific place (page, line, chapter, etc.) and mark it. By saving this mark, he already has a bookmark. He then write his comment in a text editor or record his voice comment. He optionally add a title or a description of his comment. By aggregating the comment with the bookmark, he has created an annotation.
+Story: The user reads or browses the e-book to a specific place (page, line, chapter, etc.) and mark it. By saving this mark, s/he already has a bookmark. S/he then write his/her comment in a text editor or record his/her voice comment. S/he optionally add a title or a description of his/her comment. By aggregating the comment with the bookmark, s/he has created an annotation.
 
 \section{List of Other Use Cases}
 
-The use cases were the very start point of this work. The goal of it was to get an as complete as possible overview of all the possible actions that can be done with an e-book in its larger definition (the file, application and/or device). While relevant, they did not feet well in the thesis itself and went into this annex. When that decision was took, the formal writing of the use cases was stopped. The table \ref{uc:table} presents the others cases that are not described in the section \ref{uc:read_buy}. The description of the use cases is using keywords only and could be harder to read.
+The use cases were conducted at the starting point of this project. The goal of these use cases was to get a complete overview of all the possible actions that can be done with an e-book in its larger definition (the file, application and/or device). While relevant, they did not fit well in the thesis itself and went into this appendix. When that decision was taken, the formal writing of the use cases was stopped. Table \ref{uc:table} presents the other cases that are not described in the section \ref{uc:read_buy}. The description of the use cases uses keywords only and could be harder to read.\\
 
 \begin{table}[h]
   \centering
@@ -1240,7 +1239,7 @@ The use cases were the very start point of this work. The goal of it was to get 
     \hline
     Share annotations of an e-book & Prerequisite: The user has created an annotation (cf. \vref{uc:annotate}). -internet connection - personal website, social network website, etc.
 
-Stories: shares his annotations - accesses and uses others annotations \\
+Stories: shares his/her annotations - accesses and uses others annotations \\
     \hline
     Copy an e-book & backup, archive, transfer on multiple devices (e.g. using a USB stick) \\
     \hline
@@ -1303,7 +1302,7 @@ Stories: shares his annotations - accesses and uses others annotations \\
     \hline
     Share library & Offer a collection of e-books. Or share the list of e-books that other users could borrow. \\
     \hline
-    E-book swapping & similar to the book swapping, once read, offer the e-book to a friend in exchange of one of his e-book. \\
+    E-book swapping & similar to the book swapping, once read, offer the e-book to a friend in exchange of one of his/her e-book. \\
     \hline
     BookCrossing & Require a physical book. BookCrossing a reading device with e-books on it? \\
     \hline
@@ -1321,17 +1320,17 @@ Stories: shares his annotations - accesses and uses others annotations \\
 
 \chapter{Source Code}\label{source:code}
 
-The \url{genkey_and_export.html} HTML file in listing \ref{source:html} is the starting point of the application where the user is presented the action of generating the public and private key pair, export the public key by calling the \url{keydecrypt.js} and shares it with the distant server by sending it to the \url{encrypt.php}.
+In this appendix are listed the full source code presented in the section \ref{tec:impl}. First, the \url{genkey_and_export.html} HTML file in listing \ref{source:html} is the starting point of the application where the user is presented the actions of generating the public and private key pair. After that, the public key is exported by calling the \url{keydecrypt.js} script and shared with the distant server by sending it to the \url{encrypt.php}.
 
-\lstinputlisting[language=HTML,caption={Generates keys and exports - HTML file},label=source:html]{genkey_and_export.html}
+\lstinputlisting[language=HTML,caption={HTML file that exposes the operations: generate keys and export},label=source:html]{genkey_and_export.html}
 
 The \url{keydecrypt.js} JavaScript file in listing \ref{source:js} is responsible for the operation on the client side. It generates the public and private keys pair, exports the public key and decrypts the content of files with the private key.
 
-\lstinputlisting[language=JavaScript,caption={Generates keys, exports public key and decrypts - JavaScript file},label=source:js]{keydecrypt.js}
+\lstinputlisting[language=JavaScript,caption={JavaScript file that generates keys, exports public key and decrypts},label=source:js]{keydecrypt.js}
 
 The \url{encrypt.php} PHP file in listing \ref{source:php} handles the server side operations. It imports the user public key and uses it to encrypt a EPUB file content that is sent back to the user for decryption and rendering.
 
-\lstinputlisting[language=PHP,caption={Imports public key, encrypts content - PHP file},label=source:php]{encrypt.php}
+\lstinputlisting[language=PHP,caption={PHP file that imports public key and encrypts content},label=source:php]{encrypt.php}
 
 A copy of the source code is available in: \\ \url{https://github.com/patrick-ausderau/WebCryptoAPI}.
 
