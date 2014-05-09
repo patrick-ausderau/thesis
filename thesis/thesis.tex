@@ -26,14 +26,15 @@
 Olli Alm, Project Manager\newline
 Harri Airaksinen, Head of Degree Programme
 }
-\def\metropoliakeywords {Electronic book (e-book), EPUB, PDF, Digital Right Management (DRM), Social DRM, Watermark, Copyright, DRM-free}
+\def\metropoliakeywords {Electronic Book (E-book), EPUB, PDF, Digital Right Management (DRM), Social DRM, Watermarking, Copyright, Copyright License, DRM-free}
 
 %----------------------------------------------------------------------------------------
 %	GLOBAL STYLES
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt,a4paper,oneside]{memoir}
-\usepackage[latin1]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -76,6 +77,10 @@ Harri Airaksinen, Head of Degree Programme
 \usepackage{color}
 %force the width of a table instead of column
 \usepackage{tabu}
+%include all the pages of a pdf file
+\usepackage{pdfpages}
+%style for the included pdf pages
+%\usepackage{fancyhdr}
 
 
 %NORMAL TEXT
@@ -296,13 +301,13 @@ Thesis\\[2pt]
   Instructor(s) & \metropoliainstructors
   \\ \hline
   \multicolumn{2}{|p{15cm}|}{\begin{singlespacing}\vspace{-22pt}
-  The research for a new Digital Right Management (DRM) infrastructure for electronic books (e-book) is a task of the eReading work-package from the Next Media project. The goal of this thesis is to to propose a protection system that could help limiting copyright infringement while allowing fair use of e-books.\newline
+  The research for a new Digital Right Management (DRM) infrastructure for electronic books (e-book) is a task of the eReading project of the Next Media program. The goal of this thesis is to to propose a protection system that could help limiting copyright infringement while allowing fair use of e-books.\newline
   
-  This thesis reviews the existing technologies, such as DRM, Watermark and Social DRM. It studies the upcoming Lightweight Content Protection standard (for EPUB). Apart from the technical aspect, the legal, educational and financial levers to reduce copyright infringement are studied. Web crawler and its implication into finding infringing material on the internet is also discussed in this study. \newline
+  This thesis reviews the existing DRM system and other protection technologies such as watermarking and social DRM. It studies the upcoming Lightweight Content Protection standard (for EPUB). Apart from the technical aspect, the legal, educational and financial levers to reduce copyright infringement are studied. Web crawler and its implication into finding infringing material on the internet is also discussed in this study. \newline
   
-  The main outputs of this thesis are a deliverable (number 1.3.1.4) for the Next Media project, presentations, seminars and conferences to the Finnish National Library, Next Media project, Finnish Book Publishers Association and Finnish author unions. Another output was the participation to the redaction of the DRM recommendations for the Finnish Book Publishers Association members. \newline
+  The main outputs of this thesis are a deliverable (number 1.3.1.4) for the Next Media program, presentations, seminars and conferences to the Finnish National Library, Next Media program, Finnish Book Publishers Association and Finnish author unions. Another output was the participation to the redaction of the DRM recommendations for the Finnish Book Publishers Association members. \newline
 
-  This thesis recommends not to use DRM to protect e-books but to use either a lighter protection mechanism such as Watermark and Social DRM combination or to be DRM-free. This proposal is followed by two major Finnish publishers who abandon DRM for the lighter protection.
+  This thesis recommends not to use DRM to protect e-books but to use either a lighter protection mechanism such as watermarking and social DRM combination or to be DRM-free. This proposal is enacted in the DRM recommendations and already followed by two major Finnish publishers and two vendors who abandon DRM for the lighter protection.
   
   \end{singlespacing}
   } \\[14cm] \hline
@@ -340,7 +345,7 @@ To view a copy of this license, visit \url{http://creativecommons.org/licenses/b
 
 I decided to publish my thesis work under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License because I strongly believe that you as reader deserve the freedom to copy, share and modify this work and if you do modify it, it is fair to give these same permissions to the others. I'm however a bit selfish and do not give you the full freedom with the Non Commercial clause, if you want to do business with my work, I would like to negotiate. 
 
-A copy in electronic form of this work can be found in \url{https://github.com/patrick-ausderau/thesis} with the \LaTeX{} source. The repository contains also the sides (under the Creative Commons BY-SA license) of the presentations done during this work and the other documents produced for this thesis.
+A copy in electronic form of this work can be found in \url{https://github.com/patrick-ausderau/thesis} with the \LaTeX{} source. The repository contains also the sides (under the Creative Commons Attribution-ShareAlike (CC BY-SA) license) of the presentations done during this work and the other documents produced for this thesis.
 
 \vspace{-20pt}\begin{center}
  \includegraphics[width=80pt]{gplv3}
@@ -362,7 +367,7 @@ I am grateful to Olli Alm and Harri Airaksinen, who believed in me when I was in
 
 A special thanks to  Anna Galore, Marc Levy, Philippe Aigrain and Richard M$\ldotp$ Stallman, as I strongly appreciated a personal answer from authors.
 
-To the Finnish Book Publishers Association, I wish full success in selling DRM-free e-books. I hope they will go a step forward by removing Watermark and Social DRM in the future.
+To the Finnish Book Publishers Association, I wish full success in selling DRM-free e-books. I hope they will go a step forward by removing watermarking and social DRM in the future.
 
 To Florence Bettschart, thanks a lot for your discussion about the work of the Swiss copyright governmental group, I wish you and the group a full success.
 
@@ -437,8 +442,8 @@ Since the beginning of the computer era and with the universal adoption of the i
 
 This study describes different control strategies and the laws associated to them. In security and access control domain \cite{dekker:apriori}, the protection and identification mechanisms can be divided into two categories: 
 \vspace{-17pt} \begin{itemize}
-\item \textbf{A priori} where technologies are used to impose how the digital content can be consumed. The \textbf{Digital Right Management (DRM)} and the \textbf{Password Protection} belong to this category.
-\item \textbf{A posteriori} where technologies are used to identify a file and retrieve its owner; but do not impose restriction on usage. \textbf{Watermarking}, \textbf{Fingerprinting} and \textbf{Social DRM} belong to this category.
+\item \textbf{A priori} where technologies are used to impose how the digital content can be consumed. The \textbf{Digital Right Management (DRM)} and the \textbf{password protection} belong to this category.
+\item \textbf{A posteriori} where technologies are used to identify a file and retrieve its owner; but do not impose restriction on usage. \textbf{Watermarking}, \textbf{fingerprinting} and \textbf{social DRM} belong to this category.
 \end{itemize}
 \vspace{-17pt}
 The third option is to have \textbf{no technical protection} which only rely on the copyright law or \textbf{licence}.
@@ -447,7 +452,7 @@ The practical work tests the upcoming W3C\footnote{The World Wide Web Consortium
 
 This research focuses on the protection of \textbf{electronic book (e-book)}. Depending on the sources, the definition of e-book refers to the file as the container for the texts, images, formatting, etc. in a computer readable format, or the software needed to display the book on computer screen, or the specialized reader device. In this text, when not specified, the term e-book will refer to the file. 
 
-Finally, it should be  mentioned that this work\footnote{The title of the task originally was \textquotedblleft New DRM infrastructure for books\textquotedblright} was mandated by the eReading work-package of the TEKES funded Next Media\footnote{\url{http://www.nextmedia.fi}} TIVIT research program project. It was motivated with the postulate that the current DRM systems \textquotedblleft restrict the fair use that allows books to be read or to be borrowed by anybody\textquotedblright\footnote{This document is confidential to consortium members. No public source available. The short quotes with courtesy of my thesis instructor.}. It opened research questions such as, if the printed world could be imitated where \textquotedblleft a book can be read by anybody, but only one user at a time\textquotedblright ~ or if \textquotedblleft the need for authentication\textquotedblright ~could be minimised,  etc.
+Finally, it should be  mentioned that this work\footnote{The title of the task originally was \textquotedblleft New DRM infrastructure for books\textquotedblright} was mandated by the eReading project of the TEKES funded Next Media\footnote{\url{http://www.nextmedia.fi}} TIVIT research program. It was motivated with the postulate that the current DRM systems \textquotedblleft restrict the fair use that allows books to be read or to be borrowed by anybody\textquotedblright\footnote{This document is confidential to consortium members. No public source available. The short quotes with courtesy of my thesis instructor.}. It opened research questions such as, if the printed world could be imitated where \textquotedblleft a book can be read by anybody, but only one user at a time\textquotedblright ~ or if \textquotedblleft the need for authentication\textquotedblright ~could be minimised.
 
 
 %============== BACKGROUND ==========================
@@ -484,7 +489,7 @@ Even with strong encryption and full control on the software and hardware, there
 
 Daniels (2009) uses the term \textquotedblleft \textbf{hard DRM}\textquotedblright ~to describe the DRM system that restricts physical access and usage of the file \cite{dan:hard-soft-drm-1}. Rosenblatt (2012) describes it as \textquotedblleft \textbf{heavyweight DRM}\textquotedblright. With that definition, he introduces the \textquotedblleft \textbf{lightweight DRM}\textquotedblright ~concept which is derived from the password-based encryption \cite{idpf:lcp-uc}. With the \textbf{password protection}\label{def:password_protection} approach, there is no need to call back a distant server for authentication since the protection is embedded within the file. The key to decrypt the file is a password that the user has to enter before s/he can access the content. Like with hard DRM, this technique can also manage the authorization such as restricting printing or limiting copy of content. Usually, as there is no communication with a authentication server, this technology will not block concurrent access nor limit the number of devices which host copies of the file.
 
-\section{Social DRM, Watermark and Fingerprint}
+\section{Social DRM, Watermarking and Fingerprinting}
 
 \textbf{Watermarking} and \textbf{fingerprinting} \label{def:watermark} are technologies used to identify a file. They originate from the information hiding techniques as presented in figure \ref{fig:def:drm_water_class}. Petitcolas et al. (1999) classify them as robust copyright marking if it is infeasible to remove them or if removing them will destroy the file at the same time. Otherwise, they classify them as fragile if the copyright marking is destroyed when the file is modified \cite{ieee:info_hiding}. While interesting, the other information hiding techniques as presented in figure \ref{fig:def:drm_water_class}, such as steganography that hides a message in another message will not be presented.
 
@@ -495,7 +500,7 @@ Daniels (2009) uses the term \textquotedblleft \textbf{hard DRM}\textquotedblrig
    \label{fig:def:drm_watermark}
 \end{figure}
 
-Watermark consists of data representing the user that are inserted and hidden inside the file bytes. For example, they can be imperceptible changes to the content such as spaces and invisible characters at the end of the chapter, modified pixels of the font, changes in the line/text spacing like in figure \ref{fig:def:drm_watermark}. One important aspect is the number of different watermark techniques used, so the cracker can never be sure to have defeated them all.
+Watermarking consists of data representing the user that are inserted and hidden inside the file bytes. For example, they can be imperceptible changes to the content such as spaces and invisible characters at the end of the chapter, modified pixels of the font, changes in the line/text spacing like in figure \ref{fig:def:drm_watermark}. One important aspect is the number of different watermarks used, so the cracker can never be sure to have defeated them all.
 
 \begin{figure}[h!]
    \centering
@@ -504,7 +509,7 @@ Watermark consists of data representing the user that are inserted and hidden in
    \label{fig:def:drm_water_class}
 \end{figure}
 
-Fingerprint is a technique only to identify a copy of a file by generating a cryptographic hash. With Watermark, these techniques can be used for a posteriori protection. Because identification does not control the permission, the user can do whatever s/he wants with the file. The idea is, if illegal content appears for example on a peer-to-peer network, to be able to find the user who did it.
+Fingerprinting is a technique only to identify a copy of a file by generating a cryptographic hash. With watermarking, these techniques can be used for a posteriori protection. Because identification does not control the permission, the user can do whatever s/he wants with the file. The idea is, if illegal content appears for example on a peer-to-peer network, to be able to find the user who did it.
 
 A similar approach to watermarking is \textbf{social DRM}. The difference is that the information about the user is not hidden but visible. It can be for example part of meta-data or simply visible in plain text e.g. in the footer of every page. In figure \ref{fig:def:drm_socialDRM}, the PackaDRM\footnote{Packaged Digital Rights Messaging or PackaDRM\texttrademark ~ (\url{http://www.enthrill.com/pubtech})}  presents the user information in the \textquoteleft terms and conditions\textquoteright ~section of the e-book. The idea is to let the user do what s/he wants but putting social pressure on him/her not to do anything illegal.
  
@@ -515,7 +520,7 @@ A similar approach to watermarking is \textbf{social DRM}. The difference is tha
    \label{fig:def:drm_socialDRM}
 \end{figure}
 
-The watermarking and all other identification techniques can and are often used in combination with the DRM. For example, Rosenblatt (2012) specifies that the Lightweight DRM \textquotedblleft is intended to be complementary to watermarking\textquotedblright ~\cite{idpf:lcp-rfp}. Hartung and Ramme (2000) state \textquotedblleft watermarking [\ldots] is only useful as a system component, with the most important application being DRM and copyright protection in general\textquotedblright ~\cite{ieee:drm_watermark}. Daniels (2012) refers to the combination of social DRM and watermark as \textquotedblleft\textbf{soft DRM}\textquotedblright ~because it does not restrict usage unlike DRM and still help in reducing copyright infringement, so \textquotedblleft better than no DRM at all\textquotedblright ~\cite{dan:hard-soft-drm-2}.
+The watermarking and all other identification techniques can and are often used in combination with the DRM. For example, Rosenblatt (2012) specifies that the lightweight DRM \textquotedblleft is intended to be complementary to watermarking\textquotedblright ~\cite{idpf:lcp-rfp}. Hartung and Ramme (2000) state \textquotedblleft watermarking [\ldots] is only useful as a system component, with the most important application being DRM and copyright protection in general\textquotedblright ~\cite{ieee:drm_watermark}. Daniels (2012) refers to the combination of social DRM and watermarking as \textquotedblleft\textbf{soft DRM}\textquotedblright ~because it does not restrict usage unlike DRM and still help in reducing copyright infringement, so \textquotedblleft better than no DRM at all\textquotedblright ~\cite{dan:hard-soft-drm-2}.
 
 The task to find illegal copies of the work, whether it is protected or not, is usually devoted to crawlers as described in appendix \ref{app:crawl}.
 
@@ -528,9 +533,9 @@ In order to have effective protection and to make the crack illegal, the World I
 
 \label{def:law_watermark}The WCT \cite[article 12]{wipo:wct}, EU DIRECTIVE 2001/29/EC \cite[article 7]{eur-lex:2001/29/EC} and Finnish COPYRIGHT ACT \cite[section 50d]{finlex:copyright_act} make illegal to remove or alter right management information. They also make illegal to distribute, import for distribution, broadcast, communicate or make available to the public a work from which electronic rights-management information has been removed or altered. The Finnish COPYRIGHT ACT \cite[chapter 7, sections 56f and 57(3)]{finlex:copyright_act} specifies the same type of punishment as for circumventing a technological measure.
 
-The the WCT \cite[article 12(2)]{wipo:wct} defines right management information as \textquotedblleft information which identifies the work, the author of the work, the owner of any right in the work, or information about the terms and conditions of use of the work, and any numbers or codes that represent such information\textquotedblright . To make sure that the social DRM belong to that definition, part of the social DRM should be placed in under the copyright notice or under the terms and conditions section of the e-book. Another solution could also be to have a book ID (which identifies the work) in different places in the e-book and to store that information with user purchase detail in reseller database. 
+The WCT \cite[article 12(2)]{wipo:wct} defines right management information as \textquotedblleft information which identifies the work, the author of the work, the owner of any right in the work, or information about the terms and conditions of use of the work, and any numbers or codes that represent such information\textquotedblright . To make sure that the social DRM belong to that definition, part of the social DRM should be placed in under the copyright notice or under the terms and conditions section of the e-book. Another solution could also be to have a book ID (which identifies the work) in different places in the e-book and to store that information with user purchase detail in reseller database. 
 
-According to Rosenblatt (2012), watermarking does not qualify as right management information. Even if the terms and conditions would state that removing the watermark is forbidden, \textquotedblleft it is possible that copyright law may prevail over such terms; this is a legal gray area\textquotedblright ~\cite{rosenblatt:pottermore}. Another problem with watermark that he raises is that \textquotedblleft a lightweight DRM that is susceptible to one-click crack has more protection than, say, a watermark removal tool\textquotedblright ~\cite{idpf:lcp-uc}. A watermark removal tool is legal because the watermark cannot be considered as an effective technological measure, while a DRM removal tool is illegal. This incomplete law protection could be one more argument to use watermark only in combination with other protection techniques or as Hartung and Ramme (2000) state \textquotedblleft watermarking is not a standalone technology\textquotedblright ~\cite{ieee:drm_watermark}.
+According to Rosenblatt (2012), watermarking does not qualify as right management information. Even if the terms and conditions would state that removing the watermarks is forbidden, \textquotedblleft it is possible that copyright law may prevail over such terms; this is a legal gray area\textquotedblright ~\cite{rosenblatt:pottermore}. Another problem with watermarking that he raises is that \textquotedblleft a lightweight DRM that is susceptible to one-click crack has more protection than, say, a watermark removal tool\textquotedblright ~\cite{idpf:lcp-uc}. A watermark removal tool is legal because the watermarking cannot be considered as an effective technological measure, while a DRM removal tool is illegal. This incomplete law protection could be one more argument to use watermarking only in combination with other protection techniques or as Hartung and Ramme (2000) state \textquotedblleft watermarking is not a standalone technology\textquotedblright ~\cite{ieee:drm_watermark}.
 
 
 Without technical protection, any work in electronic form still benefits from the copyright law. The author will continue to profit from the exclusive rights such as the protection for the usage and distribution of its work. With the ease of copying, modifying and sharing electronic content compare to the physical world, instead of fighting against the users, the author can surrender some of its rights for example allow non-commercial sharing and remixing. This waiving could be done for example by using a copyright license such as one of the Creative Commons\footnote{\url{http://creativecommons.org/}} licenses.
@@ -557,7 +562,7 @@ For e-book there are different file formats available with their qualities and l
 
 The most basic file format is the plain text which has the advantage of being universal which means that it can be read on any operating system (OS), even in command line environment. They also can be compressed with an external tool for transport. This format was designed to display text only and do not offer formatting such as bold or italic text, makes impossible to insert images or interactive links, etc. And finally it offers no support for content protection; with administrator privilege, the end user can easily copy the full text and modify it. 
 
-\label{def:e-book:pdf}In 2008, after seventeen years of existence, the portable document format (PDF) became a standard. It is a popular format on the internet for document exchange. For e-book, according to a 2012 French survey \cite[p. 19]{OpinionWay:baro_v1}, it is the preferred format for 53\% of the readers. By being a standard, every operating system can have application to display and print files in this format. PDF format was designed to be page oriented where the electronic version is the same as its print equivalent (this is sometimes seen as a problem, especially on small screen) but supports also re-flow feature. At the protection level, the author of the file can allow or deny the printing, copying of content, page extraction, etc. and the file can be secured by password or be electronically signed \cite{adobe:pdf}. 
+\label{def:e-book:pdf}In 2008, after seventeen years of existence, the Portable Document Format (PDF) became a standard. It is a popular format on the internet for document exchange. For e-book, according to a 2012 French survey \cite[p. 19]{OpinionWay:baro_v1}, it is the preferred format for 53\% of the readers. By being a standard, every operating system can have application to display and print files in this format. PDF format was designed to be page oriented where the electronic version is the same as its print equivalent (this is sometimes seen as a problem, especially on small screen) but supports also re-flow feature. At the protection level, the author of the file can allow or deny the printing, copying of content, page extraction, etc. and the file can be secured by password or be electronically signed \cite{adobe:pdf}. 
 
 
 \label{def:e-book:epub}Another open standard file format widely use for e-book is EPUB (short for electronic publication) standardized in 2007 which is the successor of the Open eBook (OEB) format of 1999 \cite{idpf:epub}. As of 2012 its latest version is EPUB 3. 
@@ -570,15 +575,15 @@ EPUB format uses web standards:
 \item Additionally images, sounds, videos, etc.
 \end{itemize}
 \vspace{-17pt}	 
-all together compressed into the EPUB file. 
+All this content is then compressed into the EPUB file. 
 This native compression is advantageous for the device disk usage and for faster transmission. 
 The other big difference with the PDF is the use of the dynamic layout and pagination of the HTML so the text will be adapted on the fly to the display area and the user preferred font size \cite{idpf:epub3}. 
 
 
-\label{def:e-book:epub-drm}The EPUB file format offers a protection layer but \textquotedblleft does not specify a required format for DRM\textquotedblright ~\cite[section 2.5.5]{idpf:ocf_spec}; so the choice is in the hands of the vendor. As an example, the Adobe DRM can be use to protect EPUB files. Actually, the International Digital Publishing Forum (IDPF)\footnote{IDPF is the organization responsible to maintain the EPUB standard.} is proposing \textquotedblleft requirements for a potential content protection scheme for EPUB\textquotedblright ~\cite{idpf:drm-rfc}, the lightweight DRM.
+\label{def:e-book:epub-drm}The EPUB file format offers a protection layer but \textquotedblleft does not specify a required format for DRM\textquotedblright ~\cite[section 2.5.5]{idpf:ocf_spec}; so the choice is in the hands of the vendor. As an example, the Adobe DRM can be use to protect EPUB files. Actually, the International Digital Publishing Forum (IDPF)\footnote{IDPF is the organization responsible to maintain the EPUB standard.} is proposing \textquotedblleft requirements for a potential content protection scheme for EPUB\textquotedblright ~\cite{idpf:drm-rfc}, the Lightweight Content Protection.
 
 \label{def:e-book:iba:azw}
-In 2000 Mobipocket.com developed its own e-book file format as part of their MobiPocket Reader application. This format, like ePub, is based on the Open eBook (OEB) specifications. The file can be natively secured with their solution but also left unencrypted. Mobipocket became part of Amazon in 2005 \cite{mobi:about}.
+In 2000 Mobipocket.com developed its own e-book file format as part of their MobiPocket Reader application. This format, like EPUB, is based on the Open eBook (OEB) specifications. The file can be natively secured with their solution but also left unencrypted. Mobipocket became part of Amazon in 2005 \cite{mobi:about}.
 
 After Amazon acquisition, they build their own protection on top of the Mobipocket format (with a .azw extension). This has made the future of the protected .mobi e-book unclear \cite{tdr:rip_mobi} while unprotected .mobi files can still be read from Amazon Kindle devices as well as many reading applications. Amazon also announced the creation of their new Kindle Format 8 based on HTML 5 and CSS 3. Like the .azw, it can be protected with Amazon DRM. This format should continue to be backward compatible with Mobipocket. The Amazon e-books file format can be read from Amazon Kindle devices or with Amazon OS-specific Reading apps\footnote{\url{http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000493771}}  \cite{amazon:kf8}. 
 
@@ -624,14 +629,14 @@ Part of the e-book interactions described in this chapter are presented as use c
 
 \section{E-book Devices}
 
-At the hardware level, the minimum required to display an e-book is a device with a screen and input capability. A reader can use a computer, laptop, smart-phone, tablet or dedicated e-reader device. The dedicated e-book reading device offers numerous advantages comparing to the others, such as cheap prices and good reading ergonomics: adapted controls, light weight, electronic ink (E-Ink) screen, etc. \cite{about:ipad}.
+At the hardware level, the minimum required to display an e-book is a device with a screen and input control capability. A reader can use a computer, laptop, smart-phone, tablet or dedicated e-reader device. The dedicated e-book reading device offers numerous advantages comparing to the others, such as cheap prices and good reading ergonomics: adapted controls, light weight, electronic ink (E-Ink) screen \cite{about:ipad}.
 
 E-Ink offers comfort for reading in full sunshine \textemdash which can be hard with the other type of devices due to the brightness and contrast of their screen\textemdash as well as in the shadow. This screen technology consumes very few batteries giving a very long autonomy of weeks compared to days or hours of other mobile devices. Once displayed on E-Ink screen, the text will stay there forever while the other types of screens will usually shut down to save energy which can be very annoying. 
 The new E-Ink device, such as the Kindle Paperwhite\footnote{\url{http://www.amazon.com/gp/product/B008GEKXUO/ref=fs_cl}} are back lighted, allowing to read in the night. Older ones require an external source of light.
 Even if E-Ink prototypes with color have been demonstrated\footnote{\url{http://www.geek.com/articles/gadgets/e-ink-promises-thinner-lighter-higher-resolution-and-color-e-paper-displays-2011095/}}, they offer a small palette compared to the full range of colors of the other type of devices. And currently, on the market, most of the e-book readers are still black and white with shade of grey.
 
 
-Another problem with e-book devices is that they usually only have an indirect internet access trough WLAN\footnote{Wireless Local Area Network} or no access at all forcing the user to physically connect the device to a computer for loading the e-book files. This problem also applies to some tablets and laptops, for example if a Wi-Fi\footnote{Wireless connection} access point is not present. However, the connection through the mobile network antenna would require a UMTS/LTE\footnote{UMTS (Universal Mobile Telecommunications System) and LTE (Long Term Evolution) are the new generation of GSM (Global System for Mobile Communications) cellular networks system and offer access to Internet through it.} subscription which has a cost.
+Another problem with e-book devices is that they usually only have an indirect internet access through WLAN\footnote{Wireless Local Area Network} or no access at all forcing the user to physically connect the device to a computer for loading the e-book files. This problem also applies to some tablets and laptops, for example if a Wi-Fi\footnote{Wireless connection} access point is not present. However, the connection through the mobile network antenna would require a UMTS/LTE\footnote{UMTS (Universal Mobile Telecommunications System) and LTE (Long Term Evolution) are the new generation of GSM (Global System for Mobile Communications) cellular networks system and offer access to Internet through it.} subscription which has a cost.
 
 The advantage of devices being specifically designed for e-book reading can also be seen as an inconvenience. For example, if the user would need dedicated hardware to perform every other activities, such as watching films, playing games, etc., s/he would need to travel with a lot of different devices. Another difficulty shared with smart-phones is the small disk capacity of the early versions of these devices. Nowadays the capacity is increasing and limiting this problem. Except for the mobile phones that are smaller and lighter, the e-reading devices are the most convenient for transportation compared with tablets and laptops.
 
@@ -721,18 +726,18 @@ About two years after the release of the Adobe Digital Editions, the explanation
 
 This thesis studied whether a DRM system can be made to technically protect an e-book while at the same time reducing the restriction to the fair use. Currently, one drawback of the DRM system is the lack of interoperability, like the impossibility to read an e-book on different platform. Thus, it becomes interesting to test if the upcoming W3C Web Cryptography API\footnote{\url{http://www.w3.org/TR/WebCryptoAPI}} standard could be used for the protection and encryption part of such DRM system.
 
-The assumption is that most of the modern devices do or can have a JavaScript capable web browser and can be connected to internet directly or through another device. If asserted, then making a web based DRM system where the user could use his/her favourite browser on any device to read protected content could offer a better interoperability than most of the existing DRM systems.
+The assumption is that most of the modern devices do have a JavaScript capable web browser and can be connected to internet directly or through another device. If asserted, then making a web based DRM system where the user could use his/her favourite browser on any device to read protected content could offer a better interoperability than most of the existing DRM systems.
 
-The idea to make one part of a DRM system with the Web Cryptography API originates from the W3C Use Cases~\cite{w3c:uc_webcrypto}. For example, in the use case \textquotedblleft Banking Transactions\textquotedblright ~where a user uses a public and private cryptographic key pair to exchange messages that only s/he will be the able to read. Or the \textquotedblleft Authenticated Video Services\textquotedblright ~use case where the user gets encrypted content from a distant service over the internet that only his/her device can display.
+The idea to make the encryption pillar part of a DRM system with the Web Cryptography API originates from the W3C Use Cases~\cite{w3c:uc_webcrypto}. For example, in the use case \textquotedblleft Banking Transactions\textquotedblright ~where a user uses a public and private cryptographic key pair to exchange messages that only s/he will be the able to read. Or the \textquotedblleft Authenticated Video Services\textquotedblright ~use case where the user gets encrypted content from a distant service over the internet that only his/her device can display.
 
-With the Web Cryptography API being in the draft state and with most of the exiting browsers having only a partial implementation of it\footnote{\url{http://www.w3.org/2012/webcrypto/wiki/Main_Page#First_implementations}},
-the PolyCrypt\footnote{\url{http://polycrypt.net/}} implementation is used as a fall-back. That library tests and exposes the needed cryptography libraries if not yet implemented natively by the browser. 
+With the Web Cryptography API being in the draft state and with most of the existing browsers having only a partial implementation of it\footnote{\url{http://www.w3.org/2012/webcrypto/wiki/Main_Page#First_implementations}},
+the PolyCrypt\footnote{\url{http://polycrypt.net/}} implementation is used as a fall-back component. That library tests and exposes the needed cryptography libraries if not yet implemented natively by the browser. 
 
-The starting point for the code is the web-crypto-samples application\footnote{\url{https://github.com/nvdbleek/web-crypto-samples}}, Copyright (c) 2013 Nick Van den Bleeken under MIT License. The file \url{base64.js} is an exact copy from this application, used as a library. Part of his \url{utils.js} and \url{encrypt.js} scripts are derived into the \url{keydecrypt.js} code as seen in appendix \ref{source:code}.
+The starting point for the code is the web-crypto-samples application\footnote{\url{https://github.com/nvdbleek/web-crypto-samples}}, copyrighted (2013) by Nick Van den Bleeken under MIT license. The code presented in subsection \ref{tec:impl:w3c} uses the \url{base64.js} file from the web-crypto-samples application as a library. Part of his \url{utils.js} and \url{encrypt.js} scripts are derived into the \url{keydecrypt.js} code as seen in appendix \ref{source:code}.
 
 \subsection{Technical Implementation Using Web Cryptography API}\label{tec:impl:w3c}
 
-As a first step, this application, generate the public and private key pair on the client side if they do not exist. This operation correspond to the KEYGEN-ASYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. The listing \ref{js:genkey} shows the JavaScript code used to generate the 2048 bits keys (lines 1 to 7) with the Public-Key Cryptography Standards (PKCS) RSA algorithm and the callback method if the keys get generated successfully (lines 9 to 17). After creation, the keys are stored on the user computer (lines 13 and 14) for later cryptographic operations.
+As a first step, this application generates the public and private key pair on the client side if they do not exist. This operation correspond to the KEYGEN-ASYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. The listing \ref{js:genkey} shows the JavaScript code used to generate the 2048 bits keys (lines 1 to 7) with the Public-Key Cryptography Standards (PKCS) RSA algorithm and the callback method if the keys get generated successfully (lines 9 to 17). After creation, the keys are stored on the user computer (lines 13 and 14) for later cryptographic operations.
 
 \vspace{-12pt}\begin{lstlisting}[language=JavaScript,caption={Generating public and private cryptography key pair},label=js:genkey]
 var genOp = webCrypto.generateKey({
@@ -772,7 +777,7 @@ exportOp.oncomplete = function(evt) {
 }
 \end{lstlisting}\vspace{-12pt}
 
-After the exporting preparation operation, the user sends his/her now ready public key to the server which will use that key to encrypt the content specifically for him/her. But before encryption, the server will first import the key as presented in the PHP code of listing \ref{php:import}. This operation correspond to the IMPORT requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. With no PHP function found to import the JWK format strait, the key is first converted into the X.509 Privacy-enhanced Electronic Mail (PEM)\footnote{\url{https://tools.ietf.org/html/rfc2510}} certificate format.
+After the exporting preparation operation, the user sends his/her now ready public key to the server which will use that key to encrypt the content specifically for him/her. But before encryption, the server will first import the key as presented in the PHP code of listing \ref{php:import}. This operation correspond to the IMPORT requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. With no PHP function found to import the JWK format straight, the key is first converted into the X.509 Privacy-enhanced Electronic Mail (PEM)\footnote{\url{https://tools.ietf.org/html/rfc2510}} certificate format.
 
 \vspace{-12pt}\begin{lstlisting}[language=PHP,caption={Importing public key},label=php:import]
 //receive the JWK key from the client
@@ -807,7 +812,7 @@ fclose($resfile);
 echo "Encrypted file: <a href=\"$write_file\" target=\"_blank\">$write_file</a>";
 \end{lstlisting}\vspace{-12pt}
 
-Now that the content is specifically encrypted for him, the file can be sent to the user. To decrypt the content of the file, the JavaScript will use the use the private key. This operation correspond to the DECRYPT-ASSYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. The listing \ref{js:decrypt} present the code that decrypt the content of the file bloc by bloc asynchronously.
+Now that the content is specifically encrypted for him/her, the file can be sent to the user. To decrypt the content of the file, the JavaScript will use the use the private key. This operation correspond to the DECRYPT-ASSYM requirement of the W3C Web Cryptography API Use Cases~\cite[chap. 2]{w3c:uc_webcrypto}. The listing \ref{js:decrypt} present the code that decrypt the content of the file bloc by bloc asynchronously.
 
 \vspace{-12pt}\begin{lstlisting}[language=JavaScript,caption={Decrypting content with the private key},label=js:decrypt]
 var alg = { name : "RSAES-PKCS1-v1_5" };
@@ -828,7 +833,8 @@ for(i = 0; i < blocData.length; i++){
 
 Finally, with the asynchronous decryption process, all the decrypted parts are reordered and written in a local JavaScript blob object to be rendered to the user as shown in listing \ref{js:render}. In order to get the image and styling associated with the EPUB XHTML pages, the URLs\footnote{Uniform Resource Locator} are overwritten to let the browser to get the CSS and images files on the internet.
 
-\vspace{-12pt}\begin{lstlisting}[language=JavaScript,caption={Decrypting content with the private key},label=js:render]
+%\vspace{-12pt}
+\begin{lstlisting}[language=JavaScript,caption={Decrypting content with the private key},label=js:render]
 function decryptedToBlob(){
 	//hack to transform relative path to absolute hard-coded URL.
 	var tmp = [];
@@ -853,29 +859,29 @@ function decryptedToBlob(){
 \end{lstlisting}\vspace{-12pt}
 
 Part of the source code is listed into appendix \ref{source:code}.
- The \url{genkey_and_export.html} and \url{keydecrypt.js} representing the client side of the application responsible for the local operation of generating the keys, exporting the public key, decrypting the content with the private key and rendering the result to the user. The \url{encrypt.php} file represents the server side of the application responsible for importing the user public key and encrypting the content. The source code files that are not listed in appendix \ref{source:code} are the non-modified files used as library, namely the PolyCrpt\footnote{\url{https://github.com/polycrypt/polycrypt/tree/master/src}}, Copyright (C) Raytheon BBN Technologies Corp, 2013, published under BSD 3-clause license\footnote{\url{https://github.com/polycrypt/polycrypt/blob/master/license.txt}} and the \url{base64.js}\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/js/lib/base64.js}} file , Copyright (c) 2013 Nick Van den Bleeken under MIT License\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/LICENSE}}.
+ The \url{genkey_and_export.html} and \url{keydecrypt.js} representing the client side of the application responsible for the local operation of generating the keys, exporting the public key, decrypting the content with the private key and rendering the result to the user. The \url{encrypt.php} file represents the server side of the application responsible for importing the user public key and encrypting the content. The source code files that are not listed in appendix \ref{source:code} are the non-modified files used as library, namely the PolyCrpt\footnote{\url{https://github.com/polycrypt/polycrypt/tree/master/src}}, copyrighted (2013) by Raytheon BBN Technologies Corp and published under BSD 3-clause license\footnote{\url{https://github.com/polycrypt/polycrypt/blob/master/license.txt}} and the \url{base64.js}\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/js/lib/base64.js}} file , copyrighted (2013) by Nick Van den Bleeken under MIT license\footnote{\url{https://github.com/nvdbleek/web-crypto-samples/blob/master/LICENSE}}.
  
 A demonstration of this application is running at
-  \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and the source code is available at the same place or in github\footnote{\url{https://github.com/patrick-ausderau/WebCryptoAPI}}. This software is licensed under the  GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This application encrypts the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; this e-book originates from Project Gutenberg\footnote{\url{http://www.gutenberg.org/ebooks/2701}} where it is freely available.
+  \url{http://users.metropolia.fi/~patricka/wcrypt-book/genkey_and_export.html} and the source code is available at the same place or in Github\footnote{\url{https://github.com/patrick-ausderau/WebCryptoAPI}}. This software is licensed under the  GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This application encrypts the public domain EPUB book Moby-Dick; or, The Whale by Herman Melville for the sole purpose of demonstration; this e-book originates from Project Gutenberg\footnote{\url{http://www.gutenberg.org/ebooks/2701}} where it is freely available.
 
 
-\subsection{Problems and Improvements for the Technical Implementation}
+\subsection{Limitations of the Technical Implementation and Possible Improvements}
 
-With the application described in subsection \ref{tec:impl:w3c}, the protection is only guaranteed during the transport between the server and the client machine. Once on the client machine, it is very hard to hide the private key and obfuscate the JavaScript decryption code. If the user retrieves the private key, s/he could write an alternative decryption application that could for example save an unencrypted copy of the files that s/he could later share. With the JavaScript being an interpreted language, the reverse engineering process to modify the decryption code would be easier than with compiled language.
+With the application described in subsection \ref{tec:impl:w3c}, the protection is only guaranteed during the transportation between the server and the client machine. Once on the client machine, it is very hard to hide the private key and obfuscate the JavaScript decryption code. If the user retrieves the private key, s/he could write an alternative decryption application that could for example save an unencrypted copy of the files that s/he could later share. With the JavaScript being an interpreted language, the reverse engineering process to modify the decryption code would be easier than with compiled language.
 
-Currently, once decrypted, the content can easily be copied. But even if the selecting, copy-pasting and the print screen would be disabled, the user could still take a physical picture of the content to save an unencrypted version of the text.
+Currently, once decrypted, the content can easily be copied. But even if the selecting, copy-pasting and the print screen functionalities would be disabled, the user could still take a picture of the device screen to save an unencrypted version of the text.
 
-Another concern with JavaScript as stated by Matasano Security (2013), Matthew Green (2012) or the PolyCrypt\footnote{\url{http://polycrypt.net/}} team itself is that this programming language and the current implementation of the Web Cryptography API can not be use for serious cryptographic operation. The language will suffer from many flaws such as \textquotedblleft side-channel attacks\textquotedblright ~\cite{green:js_bad_crypto} or problem with the garbage collector where \textquotedblleft secrets are lurking in memory potentially long after they're needed\textquotedblright ~\cite{matasano:js_bad_crypto} and many more. So at best, secure JavaScript cryptography could be possible only after it would be natively implemented and solidified by browser and seriously reviewed.
+Another concern with JavaScript as stated by Matasano Security (2013), Matthew Green (2012) and the PolyCrypt\footnote{\url{http://polycrypt.net/}} team itself is that this programming language and the current implementation of the Web Cryptography API can not be use for serious cryptographic operation. The language will suffer from many flaws such as \textquotedblleft side-channel attacks\textquotedblright ~\cite{green:js_bad_crypto} or problem with the garbage collector where \textquotedblleft secrets are lurking in memory potentially long after they're needed\textquotedblright ~\cite{matasano:js_bad_crypto} and many more. So at best, secure JavaScript cryptography could be possible only after it would be natively implemented and solidified by browser and seriously reviewed.
 
 The application described in subsection \ref{tec:impl:w3c} uses the asymmetric decryption operation intensively and this operation is rather slow with the current implementation of the Web Cryptography API. A possible improvement would be to only encrypt part of the file, for example the first and last three paragraphs of each chapter, which would be enough to make the content unusable. Another option would be to use the asymmetric keys only to exchange symmetric session keys, as proposed by the use case \textquotedblleft Authenticated Video Services\textquotedblright~\cite{w3c:uc_webcrypto}, with the symmetric decryption being much faster.
 
-Some possible improvements for this application would be to use the off-line storage provided by the HTML5 language, so the full encrypted content could be stored on the user computer to be read without internet connection and also making it possible to do the decryption of the next chapter in the background so the user will not have to wait. The content, once decrypted could be better presented to the user, for example by using the \url{epub.js}\footnote{\url{https://github.com/futurepress/epub.js}} script. One known bug of this application is with the encryption and decryption of some special typographical characters such as the curly quotation marks or the em dash.
+Some possible improvements for this application would be to use the off-line storage provided by the HTML5 language, so the full encrypted content could be stored on the user computer to be read without internet connection and also making it possible to do the decryption of the next chapter in the background so the user will not have to wait. The content, once decrypted could be better presented to the user, for example by using the \url{epub.js}\footnote{\url{https://github.com/futurepress/epub.js}} script. One known bug of this application is with the encryption and decryption of some special typographical characters such as the curly quotation marks (\textquoteleft , \textquoteright , \textquotedblleft , \textquotedblright) or the em dash (\textemdash ).
 
 
 
 \section{Lightweight DRM}\label{def:idpf_light}
 
-The DRM systems suffer from many drawbacks such as the interoperability problem where the reader is limited to a single platform. Also, the requirement to be connected to the internet in order to be authenticated and the risk to loose content if the vendor goes bankrupt are some of the drawbacks. This chapter explores the possible upcoming standard for a Lightweight DRM proposed by the IDPF and its attempt in limiting the DRM problems.
+The DRM systems suffer from many drawbacks such as the interoperability problem where the reader is limited to a single platform. The requirement to be connected to the internet in order to be authenticated is another drawback, as well as the risk to loose content if the vendor goes bankrupt. This chapter explores the standard proposal for the Lightweight Content Protection proposed by the IDPF and its attempt in limiting the DRM problems.
 
 The Encrypted Media Extensions possible standard from the W3C was also scouted but quickly dropped because it will not be suitable for e-books. It is specifically designed for media elements\footnote{\url{http://www.w3.org/TR/encrypted-media/#extensions}}, namely video and audio files embedded or streamed into web pages.
 
@@ -896,7 +902,7 @@ For the user device, lightweight means that less power and memory will be requir
 However, the cost in terms of price as well as the licensing will be addressed later \cite{idpf:lcp-rfp}, %[Requirements section] 
 which makes it unclear how much the costs will really be. And also, there are known patents\footnote{e.g. intertrust holds over 200 patents in the digital media protection field (from: \url{http://www.intertrust.com/technologies/patents})} in this field. So there is the risk of having to pay royalties to third parties as an extra cost for the LCP implementation.
 
-\subsection{Advantages and Limitations of Lightweight DRM}
+\subsection{Advantages and Limitations of Lightweight Content Protection}
 
 The first argument for the IDPF is to make LCP a standard. This way, it will allow more devices and reading applications to be able to open and display the protected content, ensuring better interoperability. The reader would enjoy acquiring and reading e-books from different vendors/publishers using his/her favourite application/device, thus reducing the market fragmentation or lock-in \cite{idpf:lcp-uc}. %[Why Consider LCP for EPUB? section] 
 However, the same document also states that \textquotedblleft the resulting EPUB LCP [\ldots] would likely be published under licensing regimes. [\ldots] Use of the technology would be expected to be charged on a cost recovery basis.\textquotedblright ~\cite{idpf:lcp-uc}. %[What Is the Recommended Process For Defining LCP for EPUB? section]
@@ -974,15 +980,15 @@ There are illegal offers for e-books. But based on a French survey, the number i
 
 Going DRM-free can have a positive impact on the readers and be used as a marketing argument. In fact, Bragelonne, a French publisher, followed that path in the end of 2010. Six months later, they reported that this strategy made them a leading seller of e-books in their genre. The journalist also complains that \textquotedblleft DRM is a barrier to business\textquotedblright ~\cite{numerama:drm}. In general, being DRM-free does not prevent from doing business. 
 
-Watermark and Social DRM also raise some privacy concerns, such as the risk of having private data like the reader's full name, email, the credit card number, etc. which are becoming visible to everyone. They can also lead to an unfair punishment if, for example, someone loses his/her reading device and his/her files end up being illegally shared. The person risks to be punished for crime s/he did not commit. Also, this can also affect people who have a poor knowledge of technology and can by mistake make their files available to the public.
+Watermarking and social DRM also raise some privacy concerns, such as the risk of having private data like the reader's full name, email, the credit card number, etc. which are becoming visible to everyone. They can also lead to an unfair punishment if, for example, someone loses his/her reading device and his/her files end up being illegally shared. The person risks to be punished for crime s/he did not commit. Also, this can also affect people who have a poor knowledge of technology and can by mistake make their files available to the public.
 
-With DRM, Watermark and Social DRM, the reader must provide private information in order to purchase an e-book. The reader does not has the possibility to buy it anonymously as s/he could do with a physical book by paying cache in a bookshop. This could lead to self-censorship where the user would refrain him/herself from buying a controversial e-book thus restricting the freedom of opinion.
+With DRM, watermarking and social DRM, the reader must provide private information in order to purchase an e-book. The reader does not has the possibility to buy it anonymously as s/he could do with a physical book by paying cache in a bookshop. This could lead to self-censorship where the user would refrain him/herself from buying a controversial e-book thus restricting the freedom of opinion.
 
 %http://edri.org/campaigns/copyright
 %http://www.edri.org/docs/edri_copyright_consultation.pdf
 %http://ec.europa.eu/internal_market/copyright/studies/studies_en.htm
 
-\section{Alternative to the Technical Protections}
+\section{Alternatives to Technical Protection}
 
 File sharing on the internet whether it is authorized or not, is a reality and the DRM does not stop nor prevent it. So, the alternative to the DRM is to have no technical protection at all. Among the advocates of such approach, let us mention Stallman (2008) with his essay Freedom\textemdash or Copyright? \cite{gnu:freedom_or_copyright} and Aigrain (2012) with his book Sharing \cite{aigrain:sharing}. Both also promote the legalization of non-market file sharing which is done between users without commercial counterpart and without using a commercial third party service.
 
@@ -1007,32 +1013,32 @@ Stallman \cite{gnu:freedom_or_copyright} concludes by advising that before this 
 
 \chapter{Results}
 
-The main products of this thesis are, inter alia, different kind of participation in the Next Media project. One is the deliverable (number 1.3.1.4) under the title \textquotedblleft Protection mechanisms for
-electronic books\textquotedblright . It is composed of almost the same texts and contents as the chapters \ref{intro}, \ref{protec}, \ref{exist}, \ref{free} and \ref{conc} of this work. It was returned to the consortium in February 2013. A copy of this document can be found in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
+The main products of this thesis are, inter alia, different kind of participation in the Next Media program. One is the deliverable (number 1.3.1.4) under the title \textquotedblleft Protection mechanisms for
+electronic books\textquotedblright . It is composed of almost the same texts and contents as the chapters \ref{intro}, \ref{protec}, \ref{exist}, \ref{free} and \ref{conc} of this work. It was returned to the consortium in February 2013. A copy of this document can be found in Github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
 
-Another participation to the Next Media project consisted of a presentation of some results of this work to the Finnish National library and the company Ellibs representatives in April 2012. The presentation and discussion concentrated on the topics of how Finnish libraries could lend e-books the same way they do with paper books and also about the archiving e-books. Another presentation for the Finnish Book Publishers Association development group in October 2012 concentrated on presenting the different alternatives for protecting e-books.
+Another participation to the eReading project of the Next Media program consisted of a presentation of some results of this work to the Finnish National library and the company Ellibs representatives in April 2012. The presentation and discussion concentrated on the topics of how Finnish libraries could lend e-books the same way they do with paper books and also about the archiving e-books. Another presentation for the Finnish Book Publishers Association development group in October 2012 concentrated on presenting the different alternatives for protecting e-books.
 
-For the eReading work-package of the Next Media project, there were two presentations in seminars, one in June 2012 and the next one in December 2012. 
-The Next Media project also provided a fifteen-minute presentation at the Next Media Result Seminar in February 2013. The slide show of this presentation is available on the Next Media website\footnote{\url{http://www.nextmedia.fi/779350088/en/read/Next_Media_Result_Seminar_6.2.2013}} and the video recording is available on the Vimeo platform\footnote{\url{http://vimeo.com/59498270}}. A 45-minute presentation was held in a conference for the Finnish Book Publishers Association and two authors' union members in February 2012. The slide shows of all the presentations also are published on github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
+For the eReading project of the Next Media program, there were two presentations in seminars, one in June 2012 and the next one in December 2012. 
+The Next Media program also provided a fifteen-minute presentation at the Next Media Result Seminar in February 2013. The slide show of this presentation is available on the Next Media website\footnote{\url{http://www.nextmedia.fi/779350088/en/read/Next_Media_Result_Seminar_6.2.2013}} and the video recording is available on the Vimeo platform\footnote{\url{http://vimeo.com/59498270}}. A 45-minute presentation was held in a conference for the Finnish Book Publishers Association and two authors' union members in February 2012. The slide show of this presentation is reproduced in appendix \ref{semiar}. The slide shows of all the presentations also are published on Github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
 
-The last task produced for the Next Media project was the participation in the reflection group about e-book protection initiated by the Finnish Book Publishers Association. The outcome of this work is the DRM recommendation sent to the Finnish publishers in June 2013. The main result of this publication is that two major Finnish publishers abandoned DRM in favour of the watermark and Social DRM lighter protection system\footnote{\url{https://www.sttinfo.fi/release?releaseId=8700912}}. The DRM recommendation was accompanied by the Web crawler text presented in appendix \ref{app:crawl} or as a stand alone text in github\footnote{\url{https://github.com/patrick-ausderau/thesis}}
+The last task produced for the Next Media program was the participation in the reflection group about e-book protection initiated by the Finnish Book Publishers Association. The outcome of this work is the DRM recommendation sent to the Finnish publishers in June 2013. The DRM recommendation text is reproduced in the appendix \ref{drm:rec}. The main result of this publication is that two major Finnish publishers and two vendors abandoned DRM in favour of the watermarking and social DRM lighter protection system\footnote{\url{https://www.sttinfo.fi/release?releaseId=8700912}}$^{,}$\footnote{\url{http://fin.afterdawn.com/uutiset/artikkeli.cfm/2013/12/06/suomalaisia_kustantamoja_luopui_drm-suojauksesta_sahkokirjoissaan}}. The DRM recommendation was accompanied by the Web crawler text presented in appendix \ref{app:crawl} or as a stand alone text in Github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
 
 As a result of this thesis study, an application was also made. It demonstrates that the upcoming W3C Web Cryptography API can be used to encrypt data. It also shows some of the limitation of DRM systems such as the difficulty to hide private keys. It also outlines the risks in using the current implementation of the Web Cryptography API for serious cryptographic operations.
 
 
 \chapter{Discussion}\label{discuss}
 
-During this research work, I studied the existing and upcoming technical protection on e-books, namely Digital Right Management (DRM), Watermark, Social DRM and Lightweight Content Protection (LCP). I also tried to implement a protection system with the Web Cryptography API. What I found is that there are no possible improvements of the DRM techniques because of the paradigm problem of trying to impose the physical world to the electronic world which are fundamentally different, the major difference being the ease of copying and sharing material world wide.
+During this research work, I studied the existing and upcoming technical protection on e-books, namely the Digital Right Management (DRM), watermarking, social DRM and Lightweight Content Protection (LCP). I also tried to implement a protection system with the Web Cryptography API. What I found is that there are no possible improvements of the DRM techniques because of the paradigm problem of trying to impose the physical world to the electronic world which are fundamentally different, the major difference being the ease of copying and sharing material world wide.
 
 However, a technical solution that could guarantee a fair revenue to the author of an e-book while not restricting the user freedom to share copies of it, could be to implement a script that would present a donate button inside the e-book to the reader. With such a button, if the reader likes the e-book, s/he could very easily offer a small sum of money to the author as a reward for his/her work. A similar system already exists on the internet with for example Flattr\footnote{\url{https://flattr.com/}}.
 
-At the non technical level, there is also an important lever that can be used to fight copyright infringements. At the market level, it is important that the publishers offer a rich collection of titles in electronic form, make them easily available, propose attractive prices and ideally do not impose DRM restriction \cite[p. 13]{OpinionWay:baro_v2}. With that approach, the user would be less tempted to search for the illegal alternatives. Another approach that would be interesting to study, could be to test Crowdfunding where the author writes and publishes his/her new book only if s/he gets its funding beforehand.
+At the non-technical level, there is also an important lever that can be used to fight copyright infringements. At the market level, it is important that the publishers offer a rich collection of titles in electronic form, make them easily available, propose attractive prices and ideally do not impose DRM restriction \cite[p. 13]{OpinionWay:baro_v2}. With that approach, the user would be less tempted to search for the illegal alternatives. Another approach that would be interesting to study, could be to test crowdfunding where the author writes and publishes his/her new book only if s/he gets its funding beforehand.
 
 Another important lever is to continuously educate people about the copyright. With Crowdfunding or a donate option, this work could be made easy as \textquotedblleft did you offer 1\euro ~to your favourite author this month?\textquotedblright ~\cite{gnu:freedom_or_copyright}. Finally, the other proposition is to collect flat-rate tax that would be distributed to the authors. Such proposition requires a work at the political and legal level in order to adapt the copyright laws to the reality of the internet. For example, a Swiss governmental group\footnote{\url{http://www.ejpd.admin.ch/content/ejpd/fr/home/dokumentation/mi/2012/2012-08-09.html}} is working on this question. 
 
 Under the current copyright laws, the author already benefits from copyright protection for his/her e-book even if it is published without technical protection. The author could also surrender some of his/her rights, such as allowing adaptation or sharing, using one of the Creative Commons\footnote{\url{http://creativecommons.org}},  Copyheart\footnote{\url{http://copyheart.org}}, Copyfarleft\footnote{\url{http://p2pfoundation.net/Copyfarleft}} or Free Art\footnote{\url{http://artlibre.org/licence/lal/en}} licenses.
 
-This research work was limited to the copyright protection on an electronic book. However, the question of copyright protection also applies on other artistic and scientific domains and this work opens the way to new reflections in theses domains as many of the propositions made could easily be extended to the arts and sciences in general. Indeed, this problem and the proposed solution already apply to the music and cinema and with the advance of technology such as 3D printer, the proposed solutions could also reach other domains such as sculpture and carving. There is research on holographic screen, so maybe one day, we will be able to have live arts such as dancing and theatre in our living room as well, making the adaptation of the copyright a still existing question in the future.
+This research work was limited to the copyright protection on an electronic book. However, the question of copyright protection also applies on other artistic and scientific domains and this work opens the way to new reflections in theses domains as many of the propositions made could easily be extended to the arts and sciences in general. Indeed, this problem and the proposed solution already apply to the music and cinema and with the advance of technology such as 3D printer, the proposed solutions could also reach other domains such as sculpture and carving. With the emergence of 3D television screens and researches on holographic screen, we will soon be able to have live arts such as dancing and theatre in our living room as well, making the adaptation of the copyright a still existing question in the future.
 
 \chapter{Conclusions}\label{conc}
 
@@ -1042,16 +1048,19 @@ For the e-book, the \textquoteleft hard DRM\textquoteright\footnote{Digital Righ
 
 When it comes to the Lightweight Content Protection (LCP), it is quite interesting to follow the IDPF\footnote{International Digital Publishing Forum} work. Even if the LCP still has unclear costs, it could be an alternative to \textquoteleft hard DRM\textquoteright ~for a vendor or a library when the publisher imposes technical protection. If it were implemented, it might also reduce some of the drawbacks with better interoperability, no spying on the user and a real ownership for the reader. But, as with the \textquoteleft hard DRM\textquoteleft , the LCP could be cracked to remove all the restrictions. 
 
-The Social DRM and watermark combination might be the least problematic technical solution since it does not impose restriction on usage, but offers some level of protection and helps to deter from copyright infringement. However, it raises privacy issues and could contribute in restricting the freedom of opinion.
+The social DRM and watermarking combination might be the least problematic technical solution since it does not impose restriction on usage, but offers some level of protection and helps to deter from copyright infringement. However, it raises privacy issues and could contribute in restricting the freedom of opinion.
 
 Based on the results of this study, it became apparent that being DRM-free is the best option for the e-book. It might show that the authors trust and respect their readers. Copyright and licenses, such as the Creative Commons, do provide protection and being DRM-free does not prevent anyone from doing business. 
 
 Finally, this thesis proposes that further research to find a working solution in reducing copyright infringement should also be conducted at the educational, financial, political and legal levels.
 
 %=================== BIBLIOGRAPHY =================
-\begin{flushleft}\begin{singlespacing}
+\bibliographystyle{vancouver}
+\begin{flushleft}
+\begin{singlespacing}
 \bibliography{biblio}
-\end{singlespacing}\end{flushleft}
+\end{singlespacing}
+\end{flushleft}
 
 %\bibitem{e-book_use} Umut Al; Irem Soydal; Yasar Tonta. \textit{Analysis of E-book Use: The Case of Ebrary}. In: 14th International Conference on Electronic Publishing, Helsinki. 2010. Available at \url{http://eprints.rclis.org/bitstream/10760/14696/1/tonta-al-soydal-ELPUB2010-Analysis-of-e-book-use.pdf} (12 January 2012).
 
@@ -1335,16 +1344,75 @@ The \url{encrypt.php} PHP file in listing \ref{source:php} handles the server si
 A copy of the source code is available in: \\ \url{https://github.com/patrick-ausderau/WebCryptoAPI}.
 
 %============== SEMINAR ==========================
-%\clearpage
-%\setcounter{page}{1}
-%\newtotcounter{appage4}
+\clearpage
+\setcounter{page}{1}
+\newtotcounter{appage4}
 %overwrite the header
-%\makeevenhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage4}\total{appage4})}
-%\makeoddhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage4}\total{appage4})}
 
-%\chapter{Semiar Sildes Sample}\label{semiar}
+\makeevenhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage4}\total{appage4})}
+\makeoddhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage4}\total{appage4})}
+%reset the space in toc
+\pretocmd{\chapter}{\addtocontents{toc}{\protect\vspace{11pt}}}{}{}
 
-%This is the slides produced for the presentation for the Finnish Book Publishers Association in February 2012.
+\chapter{Slide Show Presentation for the Finnish Book Publishers Association}\label{semiar}
+
+In this appendix is the slide show used for the presentation at the Finnish Book Publishers Association in February 2012. A copy of these slides are also available in Github\footnote{\url{https://github.com/patrick-ausderau/thesis}}. They are published under the Creative Commons
+Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.
+
+The slides are reproduced two per page and the content of the slides' notes are listed in plain text here:
+\vspace{-17pt} \begin{itemize}
+\item Slide 2: \\source \url{http://www.un.org/en/documents/udhr/index.shtml#a27}
+\item Slides 3, 4 and 5: \\source \url{http://www.opinion-way.com/pdf/barometre_livre_numerique_-_vague_2_-_pour_presentation_orale_vf.pdf} (my translation)
+\item Slide 6: \\sources \url{http://codev2.cc/download+remix/Lessig-Codev2.pdf} (chapter 7) and \url{http://idpf.org/sites/idpf.org/files/digital-book-conference/presentations/db2012/DB2012_Bill_Rosenblatt.pdf}
+\item Slide 7: \\ \url{http://www.wipo.int/wipolex/en/treaties/text.jsp?file_id=177635}\\
+\url{http://www.copyright.gov/legislation/dmca.pdf}\\
+EU: DIRECTIVE 2001/29/EC on the harmonisation of certain aspects of copyright and related rights in the information society 
+\url{http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2001:167:0010:0019:EN:PDF} (chapter III)\\
+\url{http://www.finlex.fi/en/laki/kaannokset/1961/en19610404.pdf} (chapter 5a)\\
+
+\url{http://europeangreens.eu/euroarchive/fileadmin/logos/pdf/policy_documents/resolutions/Montreuil/3._Digital_rigths_are_civil_rights.pdf}\\
+\url{http://piraattipuolue.fi/english/}\\
+\url{http://www.gnu.org/philosophy/freedom-or-copyright.html}\\
+\url{https://www.laquadrature.net/}\\
+\url{http://www.sharing-thebook.com/}\\
+
+\url{http://direitorio.fgv.br/sites/direitorio.fgv.br/files/Marco%20Civil%20-%20English%20Version%20sept2011.pdf}\\
+\url{http://falkvinge.net/2012/11/21/brazil-squanders-chance-at-geopolitical-influence-kills-internet-rights-bill-in-political-fiasco/}\\
+\url{http://www.3c-da.org}\\ 
+\url{http://www.ejpd.admin.ch/content/ejpd/fr/home/dokumentation/mi/2012/2012-08-09.html}
+\item Slide 9: \\Adobe Content server (+ signing) cost:
+the license \$8000  + \$2000 per year support. (\$2495 for the installation and configuration). \\
+signing one e-book permanently will \$0.22 (or \$0.08 for a 0-60 day expiring).
+\item Slide 11:\\ \url{http://publishingperspectives.com/2012/09/booxtream-on-social-drm-as-a-better-option-for-e-books/}\\
+the web version is charged per epub: \euro 0.60 if you only do a few a year; \euro 0.10 for 50,000; and lower rates for larger quantities.
+\item Slide 12: \\
+\url{http://www.gnu.org/philosophy/copyright-versus-community.html}\\  \url{http://www.defectivebydesign.org/guide/ebooks}\\  \url{https://readersbillofrights.info/}\\ \url{http://craphound.com/}\\ 
+\url{http://anna-galore.com/} 
+\end{itemize}
+
+\clearpage
+\newcounter{includepdfpage}
+\makeevenfoot{plain}{}{slides \theincludepdfpage ~and \stepcounter{includepdfpage}\theincludepdfpage}{}
+\makeoddfoot{plain}{}{slides \theincludepdfpage ~and \stepcounter{includepdfpage}\theincludepdfpage}{}
+\includepdf[nup=1x2, pages=-, width=\textwidth, delta=0mm 2mm, pagecommand={\stepcounter{includepdfpage}\pagestyle{plain}}, frame]{e-book_protection_seminar}
+
+%=============================
+\makeevenfoot{plain}{}{}{}
+\makeoddfoot{plain}{}{}{}
+\clearpage
+\setcounter{page}{1}
+\newtotcounter{appage5}
+%overwrite the header
+
+\makeevenhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage5}\total{appage5})}
+\makeoddhead{plain}{}{}{Appendix \thechapter \\ \thepage (\stepcounter{appage5}\total{appage5})}
+
+\chapter{DRM Recommendation}\label{drm:rec}
+
+The text \textquoteleft Suositus: s\"{a}hk\"{o}kirjojen suojaus\textquoteright ~is a public document written by the Finnish Book Publishers Association.
+A copy of this text is also available in Github\footnote{\url{https://github.com/patrick-ausderau/thesis}}.
+
+\includepdf[pages=-,  pagecommand={\pagestyle{plain}}, frame]{Suositus_DRM_final}
 
 %\includegraphics[width=13cm]{e-book_protection_seminar}
 
